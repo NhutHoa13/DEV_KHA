@@ -21,7 +21,7 @@ class _DangkyScreenState extends State<DangkyScreen> {
         resizeToAvoidBottomInset: false,
         
         body: Container(
-          margin: EdgeInsets.fromLTRB(0, mlr, 0, 0),
+          margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
           child: Column(
              mainAxisAlignment: MainAxisAlignment.spaceBetween,
 

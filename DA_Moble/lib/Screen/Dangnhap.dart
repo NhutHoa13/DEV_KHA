@@ -31,6 +31,8 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
+       margin: EdgeInsets.fromLTRB(0, mlr, 0, 0),
+        height: MediaQuery.of(context).size.height,
         child: Column(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
 

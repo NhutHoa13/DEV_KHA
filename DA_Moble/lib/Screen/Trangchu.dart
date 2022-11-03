@@ -23,7 +23,7 @@ class _TrangchuSrceenState extends State<TrangchuSrceen> {
       ),
       color: Colors.transparent,
       borderRadius: BorderRadius.circular(15.0),
-      //color: Color.fromARGB(255, 25, 119, 197)
+     
     ),
   );
   var style1 = TextStyle(
@@ -37,7 +37,7 @@ class _TrangchuSrceenState extends State<TrangchuSrceen> {
     var l = MediaQuery.of(context).size.width - mlr;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+     
       appBar: AppBar(
         title: Text('Trang chủ'),
       ),

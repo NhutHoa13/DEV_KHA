@@ -1,0 +1,169 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+
+class QuanlitaikhoanScreen extends StatefulWidget {
+  const QuanlitaikhoanScreen({super.key});
+
+  @override
+  State<QuanlitaikhoanScreen> createState() => _QuanlitaikhoanScreenState();
+}
+
+class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
+  var orange = Color.fromARGB(255, 255, 172, 47);
+  bool isChecked = false;
+  var style = Container(
+    decoration: BoxDecoration(
+      border: Border.all(
+        color: Colors.black.withOpacity(0.3),
+        style: BorderStyle.solid,
+        width: 2,
+      ),
+      color: Colors.transparent,
+      borderRadius: BorderRadius.circular(15.0),
+      //color: Color.fromARGB(255, 25, 119, 197)
+    ),
+  );
+  var style1 = TextStyle(
+      fontWeight: FontWeight.bold, color: Colors.black.withOpacity(0.6));
+  //fontSize: 16);
+
+  @override
+  Widget build(BuildContext context) {
+    var mlr = 20.0;
+    var r = MediaQuery.of(context).size.width - mlr;
+    var l = MediaQuery.of(context).size.width - mlr;
+
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        title: Text('Quản lí tài khoản'),
+      ),
+      body: Container(
+        child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+          Column(
+            children: [
+              Row(
+                //mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 0, r / 2 / 2, 0),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Icon(
+                        Icons.clear,
+                        color: Colors.black.withOpacity(0.6),
+                        size: 30,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    'Quản lý tài khoản',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black.withOpacity(0.6),
+                        fontSize: 16),
+                  )
+                ],
+              ),
+              Image(
+                image: AssetImage('assets/images/language.png'),
+                width: r / 3,
+              ),
+              Text(
+                'Đăng nhập lại',
+                style: TextStyle(
+                    fontSize: 22, fontWeight: FontWeight.bold, color: orange),
+              ),
+              Text(
+                'Chọn một tài khoản lưu trên thiết bị',
+                style: TextStyle(
+                    color: Colors.black.withOpacity(0.6),
+                    fontWeight: FontWeight.bold),
+              )
+            ],
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.fromLTRB(20, 100, 20, 0),
+                child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(color: orange),
+                  ),
+                  onPressed: () {},
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          height: 50,
+                          width: 50,
+                          child: ClipOval(
+                            child: Image(
+                                image: AssetImage('assets/images/logo.jpg')),
+                          ),
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Nhựt Hòa',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              'Nhuthoa@gmail.com',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.black.withOpacity(0.6)),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(color: orange),
+                  ),
+                  onPressed: () {},
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          height: 50,
+                          width: 50,
+                          child: ClipOval(
+                              child: Icon(
+                            Icons.add_circle_outline_outlined,
+                            color: Colors.orange,
+                            size: 40,
+                          )),
+                        ),
+                        Text(
+                          'Thêm tài khoản khác',
+                          style: TextStyle(
+                              color: Colors.black.withOpacity(0.6),
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          )
+        ]),
+      ),
+    );
+  }
+}

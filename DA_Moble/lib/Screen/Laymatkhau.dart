@@ -22,7 +22,7 @@ class _LaymatkhauScreenState extends State<LaymatkhauScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var mlr = 20.0;
+    var mlr = 20;
     var r = MediaQuery.of(context).size.width - mlr;
     var l = MediaQuery.of(context).size.width - mlr;
     return Scaffold(

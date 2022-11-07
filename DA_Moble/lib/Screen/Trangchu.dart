@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Dangky.dart';
+import 'package:flutter_application_1/Screen/Quanlytaikhoan.dart';
 
 class TrangchuSrceen extends StatefulWidget {
   const TrangchuSrceen({super.key});
@@ -38,10 +40,9 @@ class _TrangchuSrceenState extends State<TrangchuSrceen> {
 
     return Scaffold(
      
-      appBar: AppBar(
-        title: Text('Trang chủ'),
-      ),
+     
       body: Container(
+        
             child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -51,6 +52,7 @@ class _TrangchuSrceenState extends State<TrangchuSrceen> {
                 children: [
                   Container(
                     width: r / 2,
+                    height: r /2,
                     child: Image(
                       image: AssetImage('assets/images/language.png'),
                     ),
@@ -73,7 +75,9 @@ class _TrangchuSrceenState extends State<TrangchuSrceen> {
               ),
             ),
             Column(
+              
               children: [
+                
                 ConstrainedBox(
                   constraints: BoxConstraints(minHeight: 50, minWidth: r),
                   child: TextButton(
@@ -87,7 +91,10 @@ class _TrangchuSrceenState extends State<TrangchuSrceen> {
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10),
                                       side: BorderSide(color: orange)))),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).popUntil((route) => route.isFirst);
+                        Navigator.push(context, MaterialPageRoute(builder:(context) => const DangkyScreen()));
+                      },
                       child: Text(
                         'Đăng ký',
                         style: TextStyle(
@@ -95,7 +102,7 @@ class _TrangchuSrceenState extends State<TrangchuSrceen> {
                       )),
                 ),
                 Container(
-                  margin: EdgeInsets.fromLTRB(0, 20, 0, 60),
+                  margin: EdgeInsets.fromLTRB(10, 20, 10, 60),
                   child: ConstrainedBox(
                     constraints: BoxConstraints(minHeight: 50, minWidth: r),
                     child: OutlinedButton(
@@ -105,7 +112,10 @@ class _TrangchuSrceenState extends State<TrangchuSrceen> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).popUntil((route) => route.isFirst);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlitaikhoanScreen()));
+                        },
                         child: Text(
                           'Tôi đã có tài khoản',
                           style: TextStyle(

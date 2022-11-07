@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Dangnhap.dart';
+import 'package:flutter_application_1/Screen/Trangchu.dart';
 
 class QuanlitaikhoanScreen extends StatefulWidget {
   const QuanlitaikhoanScreen({super.key});
@@ -36,10 +38,11 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        title: Text('Quản lí tài khoản'),
-      ),
+      // appBar: AppBar(
+      //   title: Text('Quản lí tài khoản'),
+      // ),
       body: Container(
+        margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
         child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
           Column(
             children: [
@@ -49,7 +52,11 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
                   Container(
                     margin: EdgeInsets.fromLTRB(0, 0, r / 2 / 2, 0),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).popUntil((route) => route.isFirst);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => TrangchuSrceen()));
+                        Navigator.pop(context);
+                      },
                       child: Icon(
                         Icons.clear,
                         color: Colors.black.withOpacity(0.6),
@@ -133,7 +140,11 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(color: orange),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).popUntil((route) => route.isFirst);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DangnhapScreen()));
+                    //Navigator.pop(context);
+                  },
                   child: Container(
                     margin: EdgeInsets.fromLTRB(0, 10, 10, 10),
                     child: Row(
@@ -149,7 +160,7 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
                           )),
                         ),
                         Text(
-                          'Thêm tài khoản khác',
+                          'Thêm tài khoản hoặc đăng nhập',
                           style: TextStyle(
                               color: Colors.black.withOpacity(0.6),
                               fontSize: 17,

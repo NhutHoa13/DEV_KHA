@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter_application_1/Screen/Quanlytaikhoan.dart';
 
 class DangnhapScreen extends StatefulWidget {
   const DangnhapScreen({super.key});
@@ -43,7 +44,10 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                       Container(
                         margin: EdgeInsets.fromLTRB(0, 0, r / 2 / 2, 0),
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).popUntil((route) => route.isFirst);
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlitaikhoanScreen()));
+                          },
                           child: Icon(
                             Icons.arrow_back,
                             color: Colors.black.withOpacity(0.6),
@@ -64,13 +68,13 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                     image: AssetImage('assets/images/language.png'),
                     width: r / 3,
                   ),
-                  Text(
-                    'Chào mừng đến DSEL',
-                    style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: orange),
-                  ),
+                  // Text(
+                  //   'Chào mừng đến DSEL',
+                  //   style: TextStyle(
+                  //       fontSize: 28,
+                  //       fontWeight: FontWeight.bold,
+                  //       color: orange),
+                  // ),
                 ],
               ),
               Column(

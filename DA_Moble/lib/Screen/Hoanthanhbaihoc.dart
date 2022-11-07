@@ -24,8 +24,8 @@ class _HoanthanhbaihocScreenState extends State<HoanthanhbaihocScreen> {
           children: [
         Column(
           children: [
-            Text('Hoan thanh ',style: TextStyle(color: Colors.orange,fontSize: 36,fontWeight: FontWeight.bold),),
-            Text('Bai hoc ',style: TextStyle(color: Colors.orange,fontSize: 36,fontWeight: FontWeight.bold),),
+            Text('Hoàn thành',style: TextStyle(color: Colors.orange,fontSize: 36,fontWeight: FontWeight.bold),),
+            Text('Bài học ',style: TextStyle(color: Colors.orange,fontSize: 36,fontWeight: FontWeight.bold),),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
                 child: Image(

@@ -70,7 +70,7 @@ class _thaydoilichhocScreenPageState extends State<thaydoilichhocScreen> {
                     const Padding(
                         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                         child: Text(
-                          "3 phút / 1 ngày ",
+                          "10 phút / 1 ngày ",
                           style: TextStyle(fontSize: 15, color: Colors.black),
                         )),
                     const Padding(
@@ -97,7 +97,7 @@ class _thaydoilichhocScreenPageState extends State<thaydoilichhocScreen> {
                     const Padding(
                         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                         child: Text(
-                          "10 phút / 1 ngày ",
+                          "20 phút / 1 ngày ",
                           style: TextStyle(fontSize: 15, color: Colors.black),
                         )),
                     const Padding(
@@ -124,7 +124,7 @@ class _thaydoilichhocScreenPageState extends State<thaydoilichhocScreen> {
                     const Padding(
                         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                         child: Text(
-                          "15 phút / 1 ngày ",
+                          "30 phút / 1 ngày ",
                           style: TextStyle(fontSize: 15, color: Colors.black),
                         )),
                     const Padding(
@@ -151,7 +151,7 @@ class _thaydoilichhocScreenPageState extends State<thaydoilichhocScreen> {
                     const Padding(
                         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                         child: Text(
-                          "30 phút / 1 ngày ",
+                          "60 phút / 1 ngày ",
                           style: TextStyle(fontSize: 15, color: Colors.black),
                         )),
                     const Padding(

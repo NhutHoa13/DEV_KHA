@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter_application_1/Screen/Dangky.dart';
 import 'package:flutter_application_1/Screen/Quanlytaikhoan.dart';
+import 'package:flutter_application_1/Screen/Quenmatkhau.dart';
+import 'package:flutter_application_1/Screen/screen.dart';
 
 class DangnhapScreen extends StatefulWidget {
   const DangnhapScreen({super.key});
@@ -32,6 +35,7 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
+         margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
         child: Column(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
@@ -39,12 +43,11 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
               Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, r / 2 / 2, 0),
-                        child: TextButton(
-                          onPressed: () {
+                 
+                         InkWell(
+                          onTap: () {
                             Navigator.of(context).popUntil((route) => route.isFirst);
                             Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlitaikhoanScreen()));
                           },
@@ -54,14 +57,15 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                             size: 30,
                           ),
                         ),
-                      ),
+                      
                       Text(
                         'Đăng nhập',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.black.withOpacity(0.6),
                             fontSize: 16),
-                      )
+                      ),
+                      Text('           ')
                     ],
                   ),
                   Image(
@@ -163,7 +167,10 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                           ],
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                             Navigator.of(context).popUntil((route) => route.isFirst);
+                        Navigator.push(context, MaterialPageRoute(builder:(context) => const QuenmatkhauScreen()));
+                          },
                           child: Text(
                             'Quên mật khẩu',
                             style: TextStyle(
@@ -193,11 +200,14 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                                 RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.circular(15.0)))),
-                        onPressed: () {},
+                        onPressed: () {
+                           Navigator.of(context).popUntil((route) => route.isFirst);
+                        Navigator.push(context, MaterialPageRoute(builder:(context) => const screen_home()));
+                        },
                         // child: const Padding(
                         //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                         child: Text(
-                          "Tạo tài khoản",
+                          "Đăng nhập",
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -299,7 +309,12 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                 children: [
                   Text('Bạn đã có tài khoản?'),
                   InkWell(
-                    onTap: () {},
+                  onTap: () {
+                   
+                     Navigator.popUntil(context, (route) => route.isFirst);
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => DangkyScreen()));
+                      
+                    },
                     child: Text(
                       'Đăng ký',
                       style: TextStyle(

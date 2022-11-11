@@ -74,10 +74,7 @@ class _TrangchuSrceenState extends State<TrangchuSrceen> {
                 ],
               ),
             ),
-            Column(
-              
-              children: [
-                
+            
                 ConstrainedBox(
                   constraints: BoxConstraints(minHeight: 50, minWidth: r),
                   child: TextButton(
@@ -124,8 +121,7 @@ class _TrangchuSrceenState extends State<TrangchuSrceen> {
                               color: orange),
                         )),
                   ),
-                ),
-              ],
+            
             ),
           ],
         ))

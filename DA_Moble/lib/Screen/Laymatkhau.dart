@@ -152,7 +152,7 @@ class _LaymatkhauScreenState extends State<LaymatkhauScreen> {
                   
                
                 Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  padding: EdgeInsets.fromLTRB(0, 0, 0, 50),
                   child: ConstrainedBox(
                     constraints: BoxConstraints(minWidth: r / 2, minHeight: 45),
                     child: ElevatedButton(
@@ -161,7 +161,7 @@ class _LaymatkhauScreenState extends State<LaymatkhauScreen> {
                               MaterialStatePropertyAll<Color>(orange),
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20.0)))),
+                                  borderRadius: BorderRadius.circular(10.0)))),
                       onPressed: () {},
                       // child: const Padding(
                       //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),

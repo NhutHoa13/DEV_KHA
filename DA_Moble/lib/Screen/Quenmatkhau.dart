@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Dangky.dart';
+import 'package:flutter_application_1/Screen/Dangnhap.dart';
 
 class QuenmatkhauScreen extends StatefulWidget {
   const QuenmatkhauScreen({super.key});
@@ -30,6 +32,7 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
     return Scaffold(
          resizeToAvoidBottomInset: false,     
         body: Container(
+           margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
           padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,7 +45,11 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                               Navigator.of(context).popUntil((route) => route.isFirst);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DangnhapScreen()));
+                       // Navigator.pop(context);
+                            },
                             child: Icon(
                               Icons.clear,
                               color: Colors.black.withOpacity(0.6),

@@ -58,7 +58,7 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
                         Navigator.pop(context);
                       },
                       child: Icon(
-                        Icons.clear,
+                         Icons.arrow_back,
                         color: Colors.black.withOpacity(0.6),
                         size: 30,
                       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Dangnhap.dart';
 import 'package:flutter_application_1/Screen/Trangchu.dart';
 
 class DangkyScreen extends StatefulWidget {
@@ -34,9 +35,9 @@ class _DangkyScreenState extends State<DangkyScreen> {
                           margin: EdgeInsets.fromLTRB(0, 0, r / 2 / 2, 0),
                           child: TextButton(
                             onPressed: () {
-                              Navigator.of(context).popUntil((route) => route.isFirst);
+                             // Navigator.of(context).popUntil((route) => route.isFirst);
                               Navigator.push(context,MaterialPageRoute(builder: (context) => TrangchuSrceen() ) );
-                              Navigator.pop(context);
+                             // Navigator.pop(context);
                             },
                             child: Icon(
                               Icons.arrow_back,
@@ -155,7 +156,7 @@ class _DangkyScreenState extends State<DangkyScreen> {
                               MaterialStatePropertyAll<Color>(orange),
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0)))),
+                                  borderRadius: BorderRadius.circular(15.0)))),
                       onPressed: () {},
                       // child: const Padding(
                       //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),

@@ -34,7 +34,7 @@ class _xemhosoScreenPageState extends State<xemhosoScreen> {
                   'Hồ Sơ',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 15,
                       color: Colors.orange),
                 )
               ],

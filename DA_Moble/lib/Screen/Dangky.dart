@@ -22,7 +22,7 @@ class _DangkyScreenState extends State<DangkyScreen> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(
-          margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
+          margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -35,9 +35,12 @@ class _DangkyScreenState extends State<DangkyScreen> {
                           margin: EdgeInsets.fromLTRB(0, 0, r / 2 / 2, 0),
                           child: TextButton(
                             onPressed: () {
-                             // Navigator.of(context).popUntil((route) => route.isFirst);
-                              Navigator.push(context,MaterialPageRoute(builder: (context) => TrangchuSrceen() ) );
-                             // Navigator.pop(context);
+                              // Navigator.of(context).popUntil((route) => route.isFirst);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => TrangchuSrceen()));
+                              // Navigator.pop(context);
                             },
                             child: Icon(
                               Icons.arrow_back,
@@ -163,7 +166,7 @@ class _DangkyScreenState extends State<DangkyScreen> {
                       child: Text(
                         "Tạo tài khoản",
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

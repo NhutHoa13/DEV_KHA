@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screen/Caidat.dart';
+import 'package:flutter_application_1/Screen/Chinhsuahoso.dart';
 import 'package:flutter_application_1/Screen/Dangky.dart';
 import 'package:flutter_application_1/Screen/Laymatkhau.dart';
 import 'package:flutter_application_1/Screen/Quanlytaikhoan.dart';
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const QuanlitaikhoanScreen(),
+      home: const CaidatScreen(),
     );
   }
 }

@@ -39,7 +39,6 @@ class _screen_homeState extends State<screen_home> with TickerProviderStateMixin
           tabs: [
               
           Tab(icon: Image(image: AssetImage('assets/images/map.png')),),
-          Tab(icon:  Image(image: AssetImage('assets/images/medal.png')),),
           Tab(icon:  Image(image: AssetImage('assets/images/swords.png')),),
           Tab(icon:  Image(image: AssetImage('assets/images/trophy (1).png')),),
           Tab(icon:  Image(image: AssetImage('assets/images/woman.png')),),
@@ -53,7 +52,7 @@ class _screen_homeState extends State<screen_home> with TickerProviderStateMixin
   
         children:[
         Center(child:Text('Story '), ),
-        Center(child: Text('Story '),),
+        
         Center(child: Text('Shop '),),
         Center(child: Text('New Feeds '),),
         Center(child:QuanlihosoScreen(),),

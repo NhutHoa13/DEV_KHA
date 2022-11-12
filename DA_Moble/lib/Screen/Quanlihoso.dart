@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/Screen/Caidat.dart';
+import 'package:flutter_application_1/Screen/Chinhsuahoso.dart';
 
 import 'package:flutter_application_1/main.dart';
 
@@ -58,10 +59,10 @@ class _QuanlihosoScreenState extends State<QuanlihosoScreen>  {
                         ),
                         InkWell(
                               onTap: () {
-                                //Navigator.pop(context);
-                                // Navigator.popUntil(context, (route) => route.isFirst);
-                                // Navigator.push(context, MaterialPageRoute(builder: (context) => DangkyScreen()));
-                                //Navigator.pop(context);
+                               
+                                Navigator.popUntil(context, (route) => route.isFirst);
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => ChinhsuahosoScreen()));
+                                
                               },
                               child: Text(
                                 'Chỉnh sửa hồ sơ',

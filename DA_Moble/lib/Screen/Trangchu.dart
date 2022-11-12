@@ -75,54 +75,58 @@ class _TrangchuSrceenState extends State<TrangchuSrceen> {
               ),
             ),
             
-                ConstrainedBox(
-                  constraints: BoxConstraints(minHeight: 50, minWidth: r),
-                  child: TextButton(
-                      style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(orange),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      side: BorderSide(color: orange)))),
-                      onPressed: () {
-                        Navigator.of(context).popUntil((route) => route.isFirst);
-                        Navigator.push(context, MaterialPageRoute(builder:(context) => const DangkyScreen()));
-                      },
-                      child: Text(
-                        'Đăng ký',
-                        style: TextStyle(
-                            fontSize: 22, fontWeight: FontWeight.bold),
-                      )),
-                ),
-                Container(
-                  margin: EdgeInsets.fromLTRB(10, 20, 10, 60),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(minHeight: 50, minWidth: r),
-                    child: OutlinedButton(
-                        style: ElevatedButton.styleFrom(
-                          side: BorderSide(width: 1, color: orange),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        onPressed: () {
-                          Navigator.of(context).popUntil((route) => route.isFirst);
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlitaikhoanScreen()));
-                        },
-                        child: Text(
-                          'Tôi đã có tài khoản',
-                          style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              color: orange),
-                        )),
-                  ),
+                Column(
+                  children: [
+                    ConstrainedBox(
+                      constraints: BoxConstraints(minHeight: 50, minWidth: r),
+                      child: TextButton(
+                          style: ButtonStyle(
+                              foregroundColor:
+                                  MaterialStateProperty.all<Color>(Colors.white),
+                              backgroundColor:
+                                  MaterialStateProperty.all<Color>(orange),
+                              shape:
+                                  MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(10),
+                                          side: BorderSide(color: orange)))),
+                          onPressed: () {
+                            Navigator.of(context).popUntil((route) => route.isFirst);
+                            Navigator.push(context, MaterialPageRoute(builder:(context) => const DangkyScreen()));
+                          },
+                          child: Text(
+                            'Đăng ký',
+                            style: TextStyle(
+                                fontSize: 22, fontWeight: FontWeight.bold),
+                          )),
+                    ),
+                    Container(
+                     padding: EdgeInsets.fromLTRB(10, 10, 10, 50),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(minHeight: 50, minWidth: r),
+                        child: OutlinedButton(
+                            style: ElevatedButton.styleFrom(
+                              side: BorderSide(width: 1, color: orange),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).popUntil((route) => route.isFirst);
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlitaikhoanScreen()));
+                            },
+                            child: Text(
+                              'Tôi đã có tài khoản',
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: orange),
+                            )),
+                      ),
             
             ),
+                  ],
+                ),
           ],
         ))
     );

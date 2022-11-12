@@ -2,8 +2,8 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/Screen/Quanlihoso/Thanhtuu.dart';
-import 'package:flutter_application_1/Screen/Quanlihoso/Thongke.dart';
+import 'package:flutter_application_1/Screen/Caidat.dart';
+
 import 'package:flutter_application_1/main.dart';
 
 class QuanlihosoScreen extends StatefulWidget {
@@ -26,7 +26,7 @@ class _QuanlihosoScreenState extends State<QuanlihosoScreen>  {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(
-          margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
+          margin: EdgeInsets.fromLTRB(10, 50, 10, 0),
           child: Column(
               children: [
                 Column(
@@ -48,7 +48,7 @@ class _QuanlihosoScreenState extends State<QuanlihosoScreen>  {
                          Row(
                            children: [
                              Padding(
-                              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                              padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
                               child: ClipOval(
                                 child: Image(
                                     height: 50,
@@ -76,154 +76,85 @@ class _QuanlihosoScreenState extends State<QuanlihosoScreen>  {
                            ],
                          ),
                           
-                          IconButton(onPressed: () {}, icon: Icon(Icons.settings,size: 30,)),
+                          IconButton(onPressed: () {
+                            Navigator.popUntil(context, (route) => route.isFirst);
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => CaidatScreen()));
+                          }, icon: Icon(Icons.settings,size: 30,)),
                           
                         ],
                       ),
-                    
-                 
-                   
-                        // Container(
-                         
-                        //   padding: EdgeInsets.all(10),
-                        //   child: Column(
-                        //     crossAxisAlignment: CrossAxisAlignment.start,
-                        //     children: [
-                        //     Text('Thống kê',style: TextStyle(color: orange,fontSize: 20,fontWeight: FontWeight.bold),),
-                        //     Container(
-                        //       margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                            
-                        //       decoration: BoxDecoration(
-                        //         border: Border.all(width: 1,color:orange),
-                               
-                        //     borderRadius: BorderRadius.circular(10)
+                    Container(
+                        padding: const EdgeInsets.only(top: 20, bottom: 20),
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(color: Colors.grey,width: 1)
+                          )
+                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                       ContainersText(content: 'Cấp độ'),
                           
-                        //       ),
-                        //       child: Row(children: [
-                        //         Column(children: [
-                        //             ContainersText(content:'Tổng điểm KN' ),
-                        //             ContainersText(content:'Trận đã chơi' ),
-                        //         ],),
-                        //         Column(children: [
-                        //             ContainersText(content:'Chuỗi hoạt động' ),
-                        //             ContainersText(content:'Tỉ lệ thắng' ),
-                        //         ],)
-                        //       ],),
-                        //     )
-          
-                        //   ],),
-                        // ),
-                        SingleChildScrollView(child: Column(children: [
-
-                        Thongke(),
-                        Thanhtuu()
-                        ],),)
-                        
-                    
-                    //  Container(
-                     
-                    //   padding: EdgeInsets.all(10),
-                    //   child: Column(
-                    //     crossAxisAlignment: CrossAxisAlignment.start,
-                    //     children: [
-                    //     Text('Thành tựu',style: TextStyle(color: orange,fontSize: 20,fontWeight: FontWeight.bold),),
-                    //     Container(
-                    //       margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                        
-                    //       decoration: BoxDecoration(
-                    //         border: Border.all(width: 1,color:orange),
-                           
-                    //     borderRadius: BorderRadius.circular(10)
-                      
-                    //       ),
-                    //       child:
-                         
-                    //         Row(children: [
-                    //             Column(
-                    //               children: [
-                                    
-                    //                 Row(
-                    //                 // mainAxisAlignment: MainAxisAlignment.start,
-                    //                   children: [
-                    //                     Image(
-                    //                         height:80,
-                    //                         width: 100,
-                    //                         image: AssetImage('assets/images/rpg-game.png')),
-                    //                         Column(
-                    //                           crossAxisAlignment: CrossAxisAlignment.start,
-                    //                           children: [
-                    //                           Text('Người chiến thắng',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                    //                           Text('Trở thành người chiến thắng',style: TextStyle(color: Colors.black.withOpacity(0.6)),),
-                    //                           Text('trong các trận đối kháng',style: TextStyle(color: Colors.black.withOpacity(0.6)),),
-                                             
-
-                    //                         ],)
-                    //                   ],
-                    //                 ),
-                    //                  Row(
-                    //                 // mainAxisAlignment: MainAxisAlignment.start,
-                    //                   children: [
-                    //                     Image(
-                    //                         height:80,
-                    //                         width: 100,
-                    //                         image: AssetImage('assets/images/rpg-game.png')),
-                    //                         Column(
-                    //                           crossAxisAlignment: CrossAxisAlignment.start,
-                    //                           children: [
-                    //                           Text('Người chiến thắng',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                    //                           Text('Trở thành người chiến thắng',style: TextStyle(color: Colors.black.withOpacity(0.6)),),
-                    //                           Text('trong các trận đối kháng',style: TextStyle(color: Colors.black.withOpacity(0.6)),),
-                                             
-
-                    //                         ],)
-                    //                   ],
-                    //                 ),
-                    //                 Row(
-                    //                 // mainAxisAlignment: MainAxisAlignment.start,
-                    //                   children: [
-                    //                     Image(
-                    //                         height:80,
-                    //                         width: 100,
-                    //                         image: AssetImage('assets/images/rpg-game.png')),
-                    //                         Column(
-                    //                           crossAxisAlignment: CrossAxisAlignment.start,
-                    //                           children: [
-                    //                           Text('Người chiến thắng',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                    //                           Text('Trở thành người chiến thắng',style: TextStyle(color: Colors.black.withOpacity(0.6)),),
-                    //                           Text('trong các trận đối kháng',style: TextStyle(color: Colors.black.withOpacity(0.6)),),
-                                             
-
-                    //                         ],)
-                    //                   ],
-                    //                 ),
-                    //                  Row(
-                    //                 // mainAxisAlignment: MainAxisAlignment.start,
-                    //                   children: [
-                    //                     Image(
-                    //                         height:80,
-                    //                         width: 100,
-                    //                         image: AssetImage('assets/images/rpg-game.png')),
-                    //                         Column(
-                    //                           crossAxisAlignment: CrossAxisAlignment.start,
-                    //                           children: [
-                    //                           Text('Người chiến thắng',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
-                    //                           Text('Trở thành người chiến thắng',style: TextStyle(color: Colors.black.withOpacity(0.6)),),
-                    //                           Text('trong các trận đối kháng',style: TextStyle(color: Colors.black.withOpacity(0.6)),),
-                                             
-
-                    //                         ],)
-                    //                   ],
-                    //                 ),
-                    //               // OutlinedButton(onPressed: (){}, child: Text('Thành tựu khác'))                                  
-                    //               ],
-                    //             ),
-                    //         ],)
+                        ContainersText1(content: '1/30')
+                      ],),
+                    ),
+                    Container(
+                        padding: const EdgeInsets.only(top: 20, bottom: 20),
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(color: Colors.grey,width: 1)
+                          )
+                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                       ContainersText(content: 'Tổng điểm kinh nghiệm'),
                           
-                    //     )
-          
-                    //   ],),
-                    // )
-                  
+                        ContainersText1(content: '66513')
+                      ],),
+                    ),Container(
+                        padding: const EdgeInsets.only(top: 20, bottom: 20),
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(color: Colors.grey,width: 1)
+                          )
+                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                       ContainersText(content: 'Xếp bậc hiện tại'),
+                          
+                        ContainersText1(content: 'Đồng')
+                      ],),
+                    ),Container(
+                        padding: const EdgeInsets.only(top: 20, bottom: 20),
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(color: Colors.grey,width: 1)
+                          )
+                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                       ContainersText(content: 'Tổng trận đấu'),
+                          
+                        ContainersText1(content: '100')
+                      ],),
+                    ),Container(
+                        padding: const EdgeInsets.only(top: 20, bottom: 20),
+                        decoration: BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(color: Colors.grey,width: 1)
+                          )
+                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                       ContainersText(content: 'Tỉ lệ thắng'),
+                          
+                        ContainersText1(content: '100%')
+                      ],),
+                    )
                     
               ],
             ),
@@ -237,30 +168,35 @@ class _QuanlihosoScreenState extends State<QuanlihosoScreen>  {
   }
 }
 
-class ContainersText extends StatelessWidget{
-   const ContainersText ({super.key, required this.content});
-    final content;
+class ContainersText extends StatelessWidget {
+  const ContainersText({super.key, required this.content});
+  final content;
 
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Container(
-      width:170 ,
-      padding: EdgeInsets.all(15),
-      margin: EdgeInsets.fromLTRB(12, 10, 10, 10),
-      child: Text(content,
-    style: TextStyle(
-     //color: Colors.pink,
-      fontWeight:FontWeight.bold,
-            fontSize: 16,        
-      ),),
-    decoration: BoxDecoration(
-      
-    
-      border: Border.all(width: 1,
-      color: Colors.grey.withOpacity(0.6)
-
+      child: Text(
+        content,
+        style: TextStyle(
+            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16
+            // decoration: TextDecoration.underline
+            ),
       ),
-       borderRadius: BorderRadius.circular(10),
-    )
-    ); 
+    );
+  }
+}
+class ContainersText1 extends StatelessWidget {
+  const ContainersText1({super.key, required this.content});
+  final content;
+
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text(
+        content,
+        style: TextStyle(
+            color: Colors.black.withOpacity(0.6), fontWeight: FontWeight.bold, fontSize: 16
+            // decoration: TextDecoration.underline
+            ),
+      ),
+    );
   }
 }

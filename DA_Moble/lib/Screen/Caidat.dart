@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Quanlihoso.dart';
+import 'package:flutter_application_1/Screen/Quanlytaikhoan.dart';
 
 class CaidatScreen extends StatefulWidget {
   const CaidatScreen({super.key});
@@ -35,8 +37,8 @@ class _CaidatScreenState extends State<CaidatScreen> {
               children: [
                  InkWell(
                               onTap: () {
-                                // Navigator.of(context).popUntil((route) => route.isFirst);
-                                // Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlitaikhoanScreen()));
+                                Navigator.of(context).popUntil((route) => route.isFirst);
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlihosoScreen()));
                               },
                               child: Icon(
                                 Icons.arrow_back,
@@ -148,38 +150,8 @@ class _CaidatScreenState extends State<CaidatScreen> {
                           }),
               ],),
             ),
-          ],
-        ),
-         Column(
-           children: [
-             Padding(
-               padding: const EdgeInsets.all(10.0),
-               child: ConstrainedBox(
-                        constraints: BoxConstraints(minHeight: 40, minWidth: r),
-                        child: TextButton(
-                            style: ButtonStyle(
-                                foregroundColor:
-                                    MaterialStateProperty.all<Color>(Colors.white),
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(orange),
-                                shape:
-                                    MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(10),
-                                            side: BorderSide(color: orange)))),
-                            onPressed: () {
-                              // Navigator.of(context).popUntil((route) => route.isFirst);
-                              // Navigator.push(context, MaterialPageRoute(builder:(context) => const DangkyScreen()));
-                            },
-                            child: Text(
-                              'Thay đổi lịch học',
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
-                            )),
-                      ),
-             ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 80),
+              Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
                       child: ConstrainedBox(
                         constraints: BoxConstraints(minHeight: 40, minWidth: r),
                         child: TextButton(
@@ -194,8 +166,8 @@ class _CaidatScreenState extends State<CaidatScreen> {
                                             borderRadius: BorderRadius.circular(10),
                                             side: BorderSide(color: Colors.grey.withOpacity(0.6))))),
                             onPressed: () {
-                              // Navigator.of(context).popUntil((route) => route.isFirst);
-                              // Navigator.push(context, MaterialPageRoute(builder:(context) => const DangkyScreen()));
+                              Navigator.of(context).popUntil((route) => route.isFirst);
+                              Navigator.push(context, MaterialPageRoute(builder:(context) => const QuanlitaikhoanScreen()));
                             },
                             child: Text(
                               'Đăng xuất',
@@ -204,9 +176,14 @@ class _CaidatScreenState extends State<CaidatScreen> {
                             )),
                       ),
                     ),
+          ],
+        ),
+         
+             
+                  
            ],
          ),
-      ],)
+     
        ),
     );
   }

@@ -14,7 +14,7 @@ class _screen_homeState extends State<screen_home> with TickerProviderStateMixin
    late TabController _tabController;
   void initState(){
     super.initState();
-    _tabController = TabController(length: 5, vsync:this);
+    _tabController = TabController(length: 4, vsync:this);
   }
  
   @override

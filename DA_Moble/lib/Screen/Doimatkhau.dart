@@ -1,118 +1,98 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/Screen/Doimatkhau.dart';
-import 'package:flutter_application_1/Screen/Quanlihoso.dart';
-import 'package:flutter_application_1/Screen/screen.dart';
+import 'package:flutter_application_1/Screen/Chinhsuahoso.dart';
 
-class ChinhsuahosoScreen extends StatefulWidget {
-  const ChinhsuahosoScreen({super.key});
+class DoimatkhauScreen extends StatefulWidget {
+  const DoimatkhauScreen({super.key});
 
   @override
-  State<ChinhsuahosoScreen> createState() => _ChinhsuahosoScreenState();
+  State<DoimatkhauScreen> createState() => _DoimatkhauScreenState();
 }
 
-class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
+class _DoimatkhauScreenState extends State<DoimatkhauScreen> {
+   var orange = Color.fromARGB(255, 255, 172, 47);
   @override
   Widget build(BuildContext context) {
-       var mlr = 20.0;
+    var mlr = 20.0;
     var r = MediaQuery.of(context).size.width - mlr;
     var l = MediaQuery.of(context).size.width - mlr;
-    var kieu = TextStyle(
-        color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 20);
-    var orange = Color.fromARGB(255, 255, 172, 47);
     return Scaffold(
-
-      
-      body: Container(
-         margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
-        child: SingleChildScrollView(
-          child: Column(
-          
-            children: [ 
-              //screen_home(),
-               Row(
-                
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                  
-                         InkWell(
-                                          onTap: () {
-                                            Navigator.of(context).popUntil((route) => route.isFirst);
-                                            Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlihosoScreen()));
-                                          },
-                                          child: Icon(
-                                            Icons.arrow_back,
-                                            color: Colors.black.withOpacity(0.6),
-                                            size: 30,
-                                          ),
-                                        ),
-                       
-                                       
-                                        
-                                           Text(
-                                'Chỉnh sửa hồ sơ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black.withOpacity(0.6),
-                                    fontSize: 16),  
-                             
-                                       ),
-                                       Text('   ')
-                                        
-                                          
-                 ],
-               ),
-               
-                              
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Stack(
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      child: SizedBox(
-                        width: 100,
-                        height: 100,
-                        child: ClipOval(
-                          child: Image(
-                            image: AssetImage('assets/images/logo.jpg'),
-                            fit: BoxFit.cover,
+      resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
+          child: Column(children: [
+           Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                   
+                           InkWell(
+                            onTap: () {
+                              Navigator.of(context).popUntil((route) => route.isFirst);
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const ChinhsuahosoScreen()));
+                            },
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: Colors.black.withOpacity(0.6),
+                              size: 30,
+                            ),
                           ),
+                          
+                        
+                        Text(
+                          'Đổi mật khẩu',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black.withOpacity(0.6),
+                              fontSize: 16),
                         ),
+                        Text('           ')
+                      ],
+                    ),
+                     Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Mật khẩu cũ',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black.withOpacity(0.6)),
+                          ),
+                          TextField(
+                            
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: Color.fromARGB(255, 0, 0, 0)),
+                           
+                            decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: orange)),
+                              border: OutlineInputBorder(),
+                             //hintText: 'Tên người dùng',
+                           suffixIcon: Icon(Icons.remove_red_eye),
+                            
+                              hintStyle: TextStyle(
+                                  color: Color.fromARGB(255, 58, 58, 58),
+                                  fontSize: 15),
+        
+                              //prefixIcon: Icon(Icons.lock),
+                              //border: InputBorder.none,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(90, 70, 0, 0),
-                      child: Align(
-                        child: Icon(
-                          Icons.draw_sharp,
-                          //border_color_sharp
-                          color: Colors.black,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: Text(
-                  'Thay đổi ảnh đại diện',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orange,
-                  ),
-                ),
-              ),
-              Padding(
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Tên',
+                            'Mật khẩu mới',
                             style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
@@ -128,8 +108,8 @@ class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: orange)),
                               border: OutlineInputBorder(),
-                             hintText: 'Tên người dùng',
-                        
+                             //hintText: 'Tên người dùng',
+                           suffixIcon: Icon(Icons.remove_red_eye),
                             
                               hintStyle: TextStyle(
                                   color: Color.fromARGB(255, 58, 58, 58),
@@ -142,16 +122,13 @@ class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
                         ],
                       ),
                     ),
-             
-            
-              
-            Padding(
+                    Padding(
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Email',
+                            'Xác nhận mật khẩu mới',
                             style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
@@ -167,8 +144,8 @@ class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: orange)),
                               border: OutlineInputBorder(),
-                              hintText: "Nhuthoa@gmail.com",
-                        
+                             //hintText: 'Tên người dùng',
+                           suffixIcon: Icon(Icons.remove_red_eye),
                             
                               hintStyle: TextStyle(
                                   color: Color.fromARGB(255, 58, 58, 58),
@@ -181,51 +158,7 @@ class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
                         ],
                       ),
                     ),
-              ///Mật khẩu
-             
-             Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Mật khẩu',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black.withOpacity(0.6)),
-                          ),
-                          TextField(
-                             onTap: () {
-                                  Navigator.of(context).popUntil((route) => route.isFirst);
-                                  Navigator.push(context, MaterialPageRoute(builder:(context) => const DoimatkhauScreen()));
-                                },
-                            style: TextStyle(
-                              
-                                fontSize: 18,
-                                color: Color.fromARGB(255, 0, 0, 0)),
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: orange)),
-                              border: OutlineInputBorder(),
-                              hintText: "123456",
-                       
-                             
-                              hintStyle: TextStyle(
-                                  color: Color.fromARGB(255, 58, 58, 58),
-                                  fontSize: 15),
-        
-                              //prefixIcon: Icon(Icons.lock),
-                              //border: InputBorder.none,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-        
-              ///nút lưu
-              Container(
+                     Container(
                 alignment: Alignment.center,
                 child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -244,7 +177,7 @@ class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
                                                 side: BorderSide(color: orange)))),
                                 onPressed: () {
                                   Navigator.of(context).popUntil((route) => route.isFirst);
-                                  Navigator.push(context, MaterialPageRoute(builder:(context) => const QuanlihosoScreen()));
+                                  Navigator.push(context, MaterialPageRoute(builder:(context) => const ChinhsuahosoScreen()));
                                 },
                                 child: Text(
                                   'Lưu',
@@ -254,8 +187,7 @@ class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
                           ),
                     ),
               ),
-            ],
-          ),
+          ]),
         ),
       ),
     );

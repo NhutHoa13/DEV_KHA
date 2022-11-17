@@ -306,27 +306,7 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                     ],
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Bạn đã có tài khoản?'),
-                    InkWell(
-                    onTap: () {
-                     
-                       Navigator.popUntil(context, (route) => route.isFirst);
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => DangkyScreen()));
-                        
-                      },
-                      child: Text(
-                        'Đăng ký',
-                        style: TextStyle(
-                            color: orange,
-                            fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.underline),
-                      ),
-                    )
-                  ],
-                ),
+               
               ]),
         ),
       ),

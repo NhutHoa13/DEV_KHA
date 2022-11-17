@@ -21,6 +21,7 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
     var l = MediaQuery.of(context).size.width - mlr;
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      
         body: Container(
             margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
             padding: EdgeInsets.fromLTRB(10,0, 10, 10),

@@ -5,6 +5,7 @@ import 'package:flutter_application_1/Screen/Doikhang.dart';
 
 import 'package:flutter_application_1/Screen/Quanlihoso.dart';
 import 'package:flutter_application_1/Screen/Trangchu.dart';
+import 'package:flutter_application_1/Screen/Xemxephang.dart';
 
 class screen_home extends StatefulWidget {
   const screen_home({super.key});
@@ -57,7 +58,7 @@ class _screen_homeState extends State<screen_home> with TickerProviderStateMixin
         Center(child:Text('Story '), ),
         
         Center(child: DoikhangScreen(),),
-        Center(child: Text('New Feeds '),),
+        Center(child: XemxephangScreen()),
         Center(child:QuanlihosoScreen(),),
       ] ),
       

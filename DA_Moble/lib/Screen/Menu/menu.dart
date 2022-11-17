@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Xemxephang.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -13,7 +14,7 @@ class _MenuState extends State<Menu>with TickerProviderStateMixin  {
   late TabController _tabController;
   void initState(){
     super.initState();
-    _tabController = TabController(length: 5, vsync:this);
+    _tabController = TabController(length: 4, vsync:this);
   }
 
   @override
@@ -34,11 +35,11 @@ class _MenuState extends State<Menu>with TickerProviderStateMixin  {
           controller: _tabController,
           tabs: [
               
-          Tab(icon: Icon(Icons.home),),
-          Tab(icon: Icon(Icons.shop),),
-          Tab(icon: Icon(Icons.redeem),),
-          Tab(icon: Icon(Icons.local_movies),),
-          Tab(icon: Icon(Icons.notifications_active),),
+          Tab(icon: Image(image: AssetImage('assets/images/map.png')),),
+          Tab(icon: Image(image: AssetImage('assets/images/swords.png')),),
+          Tab(icon: Image(image: AssetImage('assets/images/trophy.png')),),
+          Tab(icon: Image(image: AssetImage('assets/images/woman.png')),),
+         
           
       
 
@@ -50,9 +51,9 @@ class _MenuState extends State<Menu>with TickerProviderStateMixin  {
         children:[
         Center(child: Text('Tat ca cac post '),),
         Center(child: Text('Story '),),
-        Center(child: Text('Shop '),),
+        Center(child: Text('Story '),),
         Center(child: Text('New Feeds '),),
-        Center(child: Text('Thong bao '),),
+        
       ] ),
       
       );

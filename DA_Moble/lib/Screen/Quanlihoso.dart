@@ -28,138 +28,140 @@ class _QuanlihosoScreenState extends State<QuanlihosoScreen>  {
         resizeToAvoidBottomInset: false,
         body: Container(
           margin: EdgeInsets.fromLTRB(10, 50, 10, 0),
-          child: Column(
-              children: [
-                Column(
-                  
-                  children: [
-                       
-                          Text(
-                              'Quản lí hồ sơ',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black.withOpacity(0.6),
-                                  fontSize: 16),
-                            ),
-                     Row(
-                        
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                      
-                         Row(
-                           children: [
-                             Padding(
-                              padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
-                              child: ClipOval(
-                                child: Image(
-                                    height: 50,
-                                    width: 50,
-                                    image: AssetImage('assets/images/logo.jpg')),
-                              ),
-                        ),
-                        InkWell(
-                              onTap: () {
-                               
-                                Navigator.popUntil(context, (route) => route.isFirst);
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => ChinhsuahosoScreen()));
-                                
-                              },
-                              child: Text(
-                                'Chỉnh sửa hồ sơ',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16
-                                    // decoration: TextDecoration.underline
-                                    ),
-                              ),
-                        ),
-                           ],
-                         ),
-                          
-                          IconButton(onPressed: () {
-                            Navigator.popUntil(context, (route) => route.isFirst);
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => CaidatScreen()));
-                          }, icon: Icon(Icons.settings,size: 30,)),
-                          
-                        ],
-                      ),
-                    Container(
-                        padding: const EdgeInsets.only(top: 20, bottom: 20),
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(color: Colors.grey,width: 1)
-                          )
-                        ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                       ContainersText(content: 'Cấp độ'),
-                          
-                        ContainersText1(content: '1/30')
-                      ],),
-                    ),
-                    Container(
-                        padding: const EdgeInsets.only(top: 20, bottom: 20),
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(color: Colors.grey,width: 1)
-                          )
-                        ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                       ContainersText(content: 'Tổng điểm kinh nghiệm'),
-                          
-                        ContainersText1(content: '66513')
-                      ],),
-                    ),Container(
-                        padding: const EdgeInsets.only(top: 20, bottom: 20),
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(color: Colors.grey,width: 1)
-                          )
-                        ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                       ContainersText(content: 'Xếp bậc hiện tại'),
-                          
-                        ContainersText1(content: 'Đồng')
-                      ],),
-                    ),Container(
-                        padding: const EdgeInsets.only(top: 20, bottom: 20),
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(color: Colors.grey,width: 1)
-                          )
-                        ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                       ContainersText(content: 'Tổng trận đấu'),
-                          
-                        ContainersText1(content: '100')
-                      ],),
-                    ),Container(
-                        padding: const EdgeInsets.only(top: 20, bottom: 20),
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(color: Colors.grey,width: 1)
-                          )
-                        ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                       ContainersText(content: 'Tỉ lệ thắng'),
-                          
-                        ContainersText1(content: '100%')
-                      ],),
-                    )
+          child: SingleChildScrollView(
+            child: Column(
+                children: [
+                  Column(
                     
-              ],
+                    children: [
+                         
+                            Text(
+                                'Quản lí hồ sơ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black.withOpacity(0.6),
+                                    fontSize: 16),
+                              ),
+                       Row(
+                          
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                        
+                           Row(
+                             children: [
+                               Padding(
+                                padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                                child: ClipOval(
+                                  child: Image(
+                                      height: 50,
+                                      width: 50,
+                                      image: AssetImage('assets/images/logo.jpg')),
+                                ),
+                          ),
+                          InkWell(
+                                onTap: () {
+                                 
+                                  Navigator.popUntil(context, (route) => route.isFirst);
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ChinhsuahosoScreen()));
+                                  
+                                },
+                                child: Text(
+                                  'Chỉnh sửa hồ sơ',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16
+                                      // decoration: TextDecoration.underline
+                                      ),
+                                ),
+                          ),
+                             ],
+                           ),
+                            
+                            IconButton(onPressed: () {
+                              Navigator.popUntil(context, (route) => route.isFirst);
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => CaidatScreen()));
+                            }, icon: Icon(Icons.settings,size: 30,)),
+                            
+                          ],
+                        ),
+                      Container(
+                          padding: const EdgeInsets.only(top: 20, bottom: 20),
+                          decoration: BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(color: Colors.grey,width: 1)
+                            )
+                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                         ContainersText(content: 'Cấp độ'),
+                            
+                          ContainersText1(content: '1/30')
+                        ],),
+                      ),
+                      Container(
+                          padding: const EdgeInsets.only(top: 20, bottom: 20),
+                          decoration: BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(color: Colors.grey,width: 1)
+                            )
+                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                         ContainersText(content: 'Tổng điểm kinh nghiệm'),
+                            
+                          ContainersText1(content: '66513')
+                        ],),
+                      ),Container(
+                          padding: const EdgeInsets.only(top: 20, bottom: 20),
+                          decoration: BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(color: Colors.grey,width: 1)
+                            )
+                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                         ContainersText(content: 'Xếp bậc hiện tại'),
+                            
+                          ContainersText1(content: 'Đồng')
+                        ],),
+                      ),Container(
+                          padding: const EdgeInsets.only(top: 20, bottom: 20),
+                          decoration: BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(color: Colors.grey,width: 1)
+                            )
+                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                         ContainersText(content: 'Tổng trận đấu'),
+                            
+                          ContainersText1(content: '100')
+                        ],),
+                      ),Container(
+                          padding: const EdgeInsets.only(top: 20, bottom: 20),
+                          decoration: BoxDecoration(
+                            border: Border(
+                              bottom: BorderSide(color: Colors.grey,width: 1)
+                            )
+                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                         ContainersText(content: 'Tỉ lệ thắng'),
+                            
+                          ContainersText1(content: '100%')
+                        ],),
+                      )
+                      
+                ],
+              ),
+              ]
             ),
-            ]
           ),
           
         ),

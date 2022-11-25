@@ -26,6 +26,7 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
             margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
             padding: EdgeInsets.fromLTRB(10,0, 10, 10),
           child: Column(
+          
             children: [
               Center(child:Text(
                           'Đối kháng',
@@ -50,7 +51,7 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
                           )
               ],),
               Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
                 child: Image(
                   height: 150,
                   width: 150,
@@ -60,10 +61,11 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
                 padding: EdgeInsets.fromLTRB(10, 50, 10, 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+          
                   children: [
                     ConstrainedBox(
                       constraints:
-                          BoxConstraints(minWidth: 200, minHeight: 40),
+                          BoxConstraints(minWidth: 300, minHeight: 50),
                       child: ElevatedButton(
                         style: ButtonStyle(
                           side: 
@@ -98,11 +100,12 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
               Container(
                 padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ConstrainedBox(
                       constraints:
-                          BoxConstraints(minWidth: 200, minHeight: 40),
+                          BoxConstraints(minWidth: 250, minHeight: 50),
                       child: ElevatedButton(
                         style: ButtonStyle(
                           side: 

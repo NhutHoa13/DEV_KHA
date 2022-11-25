@@ -30,12 +30,12 @@ class _DangkyScreenState extends State<DangkyScreen> {
                   Column(
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            margin: EdgeInsets.fromLTRB(0, 0, r / 2 / 2, 0),
-                            child: TextButton(
-                              onPressed: () {
+                           
+                            child: InkWell(
+                              onTap: () {
                                // Navigator.of(context).popUntil((route) => route.isFirst);
                                 Navigator.push(context,MaterialPageRoute(builder: (context) => TrangchuSrceen() ) );
                                // Navigator.pop(context);
@@ -53,7 +53,8 @@ class _DangkyScreenState extends State<DangkyScreen> {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black.withOpacity(0.6),
                                 fontSize: 16),
-                          )
+                          ),
+                          Text (' '),
                         ],
                       ),
                       Image(
@@ -158,7 +159,10 @@ class _DangkyScreenState extends State<DangkyScreen> {
                             shape: MaterialStateProperty.all(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15.0)))),
-                        onPressed: () {},
+                        onPressed: () {
+                              Navigator.of(context).popUntil((route) => route.isFirst);
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => DangnhapScreen() ) );
+                        },
                         // child: const Padding(
                         //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                         child: Text(

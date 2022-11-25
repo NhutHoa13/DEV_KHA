@@ -58,7 +58,7 @@ class _screen_homeState extends State<screen_home> with TickerProviderStateMixin
         Center(child:Text('Story '), ),
         
         Center(child: DoikhangScreen(),),
-        Center(child: XemxephangScreen()),
+        Center(child: phanhang()),
         Center(child:QuanlihosoScreen(),),
       ] ),
       

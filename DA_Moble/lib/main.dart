@@ -16,13 +16,16 @@ import 'package:flutter_application_1/Screen/Menu/menu.dart';
 import 'package:flutter_application_1/Screen/Quanlihoso.dart';
 import 'package:flutter_application_1/Screen/Quanlytaikhoan.dart';
 import 'package:flutter_application_1/Screen/Quenmatkhau.dart';
+import 'package:flutter_application_1/Screen/Timtran.dart';
 import 'package:flutter_application_1/Screen/Trangchu.dart';
 import 'package:flutter_application_1/Screen/Xemxephang.dart';
 import 'package:flutter_application_1/Screen/xemhoso.dart';
+import 'package:flutter_application_1/model/db_content.dart';
 
 import 'Screen/Trangchu.dart';
 
 void main() {
+  db_context.createData();
   runApp(const MyApp());
 }
 

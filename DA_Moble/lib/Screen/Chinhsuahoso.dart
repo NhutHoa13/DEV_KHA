@@ -15,56 +15,47 @@ class ChinhsuahosoScreen extends StatefulWidget {
 class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
   @override
   Widget build(BuildContext context) {
-       var mlr = 20.0;
+    var mlr = 20.0;
     var r = MediaQuery.of(context).size.width - mlr;
     var l = MediaQuery.of(context).size.width - mlr;
     var kieu = TextStyle(
         color: Colors.grey, fontWeight: FontWeight.bold, fontSize: 20);
     var orange = Color.fromARGB(255, 255, 172, 47);
     return Scaffold(
-
-      
       body: Container(
-         margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
+        margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
         child: SingleChildScrollView(
           child: Column(
-          
-            children: [ 
+            children: [
               //screen_home(),
-               Row(
-                
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                  
-                         InkWell(
-                                          onTap: () {
-                                            Navigator.of(context).popUntil((route) => route.isFirst);
-                                            Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlihosoScreen()));
-                                          },
-                                          child: Icon(
-                                            Icons.arrow_back,
-                                            color: Colors.black.withOpacity(0.6),
-                                            size: 30,
-                                          ),
-                                        ),
-                       
-                                       
-                                        
-                                           Text(
-                                'Chỉnh sửa hồ sơ',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black.withOpacity(0.6),
-                                    fontSize: 16),  
-                             
-                                       ),
-                                       Text('   ')
-                                        
-                                          
-                 ],
-               ),
-               
-                              
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).popUntil((route) => route.isFirst);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const QuanlihosoScreen()));
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.black.withOpacity(0.6),
+                      size: 30,
+                    ),
+                  ),
+                  Text(
+                    'Chỉnh sửa hồ sơ',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black.withOpacity(0.6),
+                        fontSize: 16),
+                  ),
+                  Text('   ')
+                ],
+              ),
+
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Stack(
@@ -107,152 +98,150 @@ class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
                 ),
               ),
               Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Tên',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black.withOpacity(0.6)),
-                          ),
-                          TextField(
-                            
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Color.fromARGB(255, 0, 0, 0)),
-                           
-                            decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: orange)),
-                              border: OutlineInputBorder(),
-                             hintText: 'Tên người dùng',
-                        
-                            
-                              hintStyle: TextStyle(
-                                  color: Color.fromARGB(255, 58, 58, 58),
-                                  fontSize: 15),
-        
-                              //prefixIcon: Icon(Icons.lock),
-                              //border: InputBorder.none,
-                            ),
-                          ),
-                        ],
+                padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Tên',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black.withOpacity(0.6)),
+                    ),
+                    TextField(
+                      style: TextStyle(
+                          fontSize: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: orange)),
+                        border: OutlineInputBorder(),
+                        hintText: 'Tên người dùng',
+
+                        hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 58, 58, 58),
+                            fontSize: 15),
+
+                        //prefixIcon: Icon(Icons.lock),
+                        //border: InputBorder.none,
                       ),
                     ),
-             
-            
-              
-            Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Email',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black.withOpacity(0.6)),
-                          ),
-                          TextField(
-                            
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: Color.fromARGB(255, 0, 0, 0)),
-                           
-                            decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: orange)),
-                              border: OutlineInputBorder(),
-                              hintText: "Nhuthoa@gmail.com",
-                        
-                            
-                              hintStyle: TextStyle(
-                                  color: Color.fromARGB(255, 58, 58, 58),
-                                  fontSize: 15),
-        
-                              //prefixIcon: Icon(Icons.lock),
-                              //border: InputBorder.none,
-                            ),
-                          ),
-                        ],
+                  ],
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Email',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black.withOpacity(0.6)),
+                    ),
+                    TextField(
+                      style: TextStyle(
+                          fontSize: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: orange)),
+                        border: OutlineInputBorder(),
+                        hintText: "Nhuthoa@gmail.com",
+
+                        hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 58, 58, 58),
+                            fontSize: 15),
+
+                        //prefixIcon: Icon(Icons.lock),
+                        //border: InputBorder.none,
                       ),
                     ),
+                  ],
+                ),
+              ),
+
               ///Mật khẩu
-             
-             Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Mật khẩu',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black.withOpacity(0.6)),
-                          ),
-                          TextField(
-                             onTap: () {
-                                  Navigator.of(context).popUntil((route) => route.isFirst);
-                                  Navigator.push(context, MaterialPageRoute(builder:(context) => const DoimatkhauScreen()));
-                                },
-                            style: TextStyle(
-                              
-                                fontSize: 18,
-                                color: Color.fromARGB(255, 0, 0, 0)),
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: orange)),
-                              border: OutlineInputBorder(),
-                              hintText: "123456",
-                       
-                             
-                              hintStyle: TextStyle(
-                                  color: Color.fromARGB(255, 58, 58, 58),
-                                  fontSize: 15),
-        
-                              //prefixIcon: Icon(Icons.lock),
-                              //border: InputBorder.none,
-                            ),
-                          ),
-                        ],
+
+              Padding(
+                padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Mật khẩu',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black.withOpacity(0.6)),
+                    ),
+                    TextField(
+                      onTap: () {
+                        Navigator.of(context)
+                            .popUntil((route) => route.isFirst);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DoimatkhauScreen()));
+                      },
+                      style: TextStyle(
+                          fontSize: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: orange)),
+                        border: OutlineInputBorder(),
+                        hintText: "123456",
+
+                        hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 58, 58, 58),
+                            fontSize: 15),
+
+                        //prefixIcon: Icon(Icons.lock),
+                        //border: InputBorder.none,
                       ),
                     ),
-        
+                  ],
+                ),
+              ),
+
               ///nút lưu
               Container(
                 alignment: Alignment.center,
                 child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child:  ConstrainedBox(
-                            constraints: BoxConstraints(minHeight: 40, minWidth: 200),
-                            child: TextButton(
-                                style: ButtonStyle(
-                                    foregroundColor:
-                                        MaterialStateProperty.all<Color>(Colors.white),
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(orange),
-                                    shape:
-                                        MaterialStateProperty.all<RoundedRectangleBorder>(
-                                            RoundedRectangleBorder(
-                                                borderRadius: BorderRadius.circular(20),
-                                                side: BorderSide(color: orange)))),
-                                onPressed: () {
-                                  Navigator.of(context).popUntil((route) => route.isFirst);
-                                  Navigator.push(context, MaterialPageRoute(builder:(context) => const QuanlihosoScreen()));
-                                },
-                                child: Text(
-                                  'Lưu',
-                                  style: TextStyle(
-                                      fontSize: 22, fontWeight: FontWeight.bold),
-                                )),
-                          ),
-                    ),
+                  padding: const EdgeInsets.all(8.0),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(minHeight: 40, minWidth: 200),
+                    child: TextButton(
+                        style: ButtonStyle(
+                            foregroundColor:
+                                MaterialStateProperty.all<Color>(Colors.white),
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(orange),
+                            shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    side: BorderSide(color: orange)))),
+                        onPressed: () {
+                          Navigator.of(context)
+                              .popUntil((route) => route.isFirst);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const QuanlihosoScreen()));
+                        },
+                        child: Text(
+                          'Lưu',
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),
+                        )),
+                  ),
+                ),
               ),
             ],
           ),

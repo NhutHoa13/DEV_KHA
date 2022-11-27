@@ -23,7 +23,7 @@ class _DangkyScreenState extends State<DangkyScreen> {
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           child: Container(
-            margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
+            margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -36,9 +36,13 @@ class _DangkyScreenState extends State<DangkyScreen> {
                             margin: EdgeInsets.fromLTRB(0, 0, r / 2 / 2, 0),
                             child: TextButton(
                               onPressed: () {
-                               // Navigator.of(context).popUntil((route) => route.isFirst);
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => TrangchuSrceen() ) );
-                               // Navigator.pop(context);
+                                // Navigator.of(context).popUntil((route) => route.isFirst);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            TrangchuSrceen()));
+                                // Navigator.pop(context);
                               },
                               child: Icon(
                                 Icons.arrow_back,
@@ -75,7 +79,8 @@ class _DangkyScreenState extends State<DangkyScreen> {
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
                           style: TextStyle(
-                              fontSize: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                              fontSize: 18,
+                              color: Color.fromARGB(255, 0, 0, 0)),
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: orange)),
@@ -91,7 +96,8 @@ class _DangkyScreenState extends State<DangkyScreen> {
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
                           style: TextStyle(
-                              fontSize: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                              fontSize: 18,
+                              color: Color.fromARGB(255, 0, 0, 0)),
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: orange)),
@@ -107,7 +113,8 @@ class _DangkyScreenState extends State<DangkyScreen> {
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
                           style: TextStyle(
-                              fontSize: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                              fontSize: 18,
+                              color: Color.fromARGB(255, 0, 0, 0)),
                           obscureText: true,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
@@ -119,7 +126,7 @@ class _DangkyScreenState extends State<DangkyScreen> {
                             labelStyle: TextStyle(
                                 color: Color.fromARGB(255, 58, 58, 58),
                                 fontSize: 15),
-        
+
                             //prefixIcon: Icon(Icons.lock),
                             //border: InputBorder.none,
                           ),
@@ -129,7 +136,8 @@ class _DangkyScreenState extends State<DangkyScreen> {
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
                           style: TextStyle(
-                              fontSize: 18, color: Color.fromARGB(255, 0, 0, 0)),
+                              fontSize: 18,
+                              color: Color.fromARGB(255, 0, 0, 0)),
                           obscureText: true,
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
@@ -150,15 +158,22 @@ class _DangkyScreenState extends State<DangkyScreen> {
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 40),
                     child: ConstrainedBox(
-                      constraints: BoxConstraints(minWidth: r / 2, minHeight: 50),
+                      constraints:
+                          BoxConstraints(minWidth: r / 2, minHeight: 50),
                       child: ElevatedButton(
                         style: ButtonStyle(
                             backgroundColor:
                                 MaterialStatePropertyAll<Color>(orange),
                             shape: MaterialStateProperty.all(
                                 RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15.0)))),
-                        onPressed: () {},
+                                    borderRadius:
+                                        BorderRadius.circular(15.0)))),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DangnhapScreen()));
+                        },
                         // child: const Padding(
                         //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                         child: Text(

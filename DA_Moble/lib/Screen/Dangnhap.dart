@@ -35,31 +35,33 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
-         margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
+        margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
         child: SingleChildScrollView(
           child: Column(
               //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        
+
               children: [
                 Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                   
-                           InkWell(
-                            onTap: () {
-                              Navigator.of(context).popUntil((route) => route.isFirst);
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlitaikhoanScreen()));
-                            },
-                            child: Icon(
-                              Icons.arrow_back,
-                              color: Colors.black.withOpacity(0.6),
-                              size: 30,
-                            ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context)
+                                .popUntil((route) => route.isFirst);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const QuanlitaikhoanScreen()));
+                          },
+                          child: Icon(
+                            Icons.arrow_back,
+                            color: Colors.black.withOpacity(0.6),
+                            size: 30,
                           ),
-                          
-                        
+                        ),
                         Text(
                           'Đăng nhập',
                           style: TextStyle(
@@ -141,7 +143,7 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                               hintStyle: TextStyle(
                                   color: Color.fromARGB(255, 58, 58, 58),
                                   fontSize: 15),
-        
+
                               //prefixIcon: Icon(Icons.lock),
                               //border: InputBorder.none,
                             ),
@@ -170,8 +172,13 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                           ),
                           InkWell(
                             onTap: () {
-                               Navigator.of(context).popUntil((route) => route.isFirst);
-                          Navigator.push(context, MaterialPageRoute(builder:(context) => const QuenmatkhauScreen()));
+                              Navigator.of(context)
+                                  .popUntil((route) => route.isFirst);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const QuenmatkhauScreen()));
                             },
                             child: Text(
                               'Quên mật khẩu',
@@ -203,8 +210,12 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                                       borderRadius:
                                           BorderRadius.circular(15.0)))),
                           onPressed: () {
-                             Navigator.of(context).popUntil((route) => route.isFirst);
-                          Navigator.push(context, MaterialPageRoute(builder:(context) => const screen_home()));
+                            Navigator.of(context)
+                                .popUntil((route) => route.isFirst);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const screen_home()));
                           },
                           // child: const Padding(
                           //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -306,7 +317,6 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                     ],
                   ),
                 ),
-               
               ]),
         ),
       ),

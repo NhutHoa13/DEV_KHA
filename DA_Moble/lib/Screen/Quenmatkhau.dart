@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/CapNhatMatKhau.dart';
 import 'package:flutter_application_1/Screen/Dangky.dart';
 import 'package:flutter_application_1/Screen/Dangnhap.dart';
 
@@ -30,9 +31,9 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
     var r = MediaQuery.of(context).size.width - mlr;
     var l = MediaQuery.of(context).size.width - mlr;
     return Scaffold(
-         resizeToAvoidBottomInset: false,     
+        resizeToAvoidBottomInset: false,
         body: Container(
-           margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
+          margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
           padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,9 +47,13 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
                         children: [
                           InkWell(
                             onTap: () {
-                               Navigator.of(context).popUntil((route) => route.isFirst);
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => DangnhapScreen()));
-                       // Navigator.pop(context);
+                              Navigator.of(context)
+                                  .popUntil((route) => route.isFirst);
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => DangnhapScreen()));
+                              // Navigator.pop(context);
                             },
                             child: Icon(
                               Icons.clear,
@@ -76,9 +81,9 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
                     Text(
                         'Nhập lại địa chỉ email để nhận lại đường dẫn đặt mật khẩu',
                         style: TextStyle(
-                            color: Colors.black.withOpacity(0.6),
-                            fontWeight: FontWeight.bold,
-                            )),
+                          color: Colors.black.withOpacity(0.6),
+                          fontWeight: FontWeight.bold,
+                        )),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
@@ -105,7 +110,12 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20.0)))),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => CapnhatMk())));
+                      },
                       // child: const Padding(
                       //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: Text(
@@ -119,7 +129,6 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
                   ),
                 ),
               ]),
-        )
-      );
+        ));
   }
 }

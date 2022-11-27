@@ -35,8 +35,8 @@ class _phanhangState extends State<phanhang> {
                   width: 60,
                   child: Image(image: AssetImage('assets/images/shield (7).png'))),
                 SizedBox(
-                  height: 100,
-                  width: 100,
+                  height: 90,
+                  width: 90,
                   child: Image(image: AssetImage('assets/images/shield (2).png'))),
                    SizedBox(
                   height: 60,

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter_application_1/Screen/Timtran.dart';
 
 class DoikhangScreen extends StatefulWidget {
   const DoikhangScreen({super.key});
@@ -80,8 +81,8 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
                                     borderRadius:
                                         BorderRadius.circular(15.0)))),
                         onPressed: () {
-                        //    Navigator.of(context).popUntil((route) => route.isFirst);
-                        // Navigator.push(context, MaterialPageRoute(builder:(context) => const screen_home()));
+                           Navigator.of(context).popUntil((route) => route.isFirst);
+                        Navigator.push(context, MaterialPageRoute(builder:(context) => const TimtranScreen()));
                         },
                         // child: const Padding(
                         //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),

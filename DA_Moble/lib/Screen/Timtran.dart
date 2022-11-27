@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Doikhang.dart';
 
 class TimtranScreen extends StatefulWidget {
   const TimtranScreen({super.key});
@@ -93,7 +94,19 @@ class _TimtranScreenState extends State<TimtranScreen> {
                 )
               ],
             ),
+          ),
+          Center(
+            child: TextButton(onPressed: (){
+               Navigator.of(context).popUntil((route) => route.isFirst);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DoikhangScreen()));
+            }, 
+                      child: Text('Hủy',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold),)),
           )
+         
         ]),
       ),
     );

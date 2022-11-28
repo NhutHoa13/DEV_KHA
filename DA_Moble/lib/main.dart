@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screen/Caidat.dart';
+import 'package:flutter_application_1/Screen/CapNhatMatKhau.dart';
 import 'package:flutter_application_1/Screen/Chinhsuahoso.dart';
 import 'package:flutter_application_1/Screen/Choicanhan.dart';
 import 'package:flutter_application_1/Screen/Dangky.dart';
@@ -17,6 +18,7 @@ import 'package:flutter_application_1/Screen/Quanlytaikhoan.dart';
 import 'package:flutter_application_1/Screen/Quenmatkhau.dart';
 import 'package:flutter_application_1/Screen/Timtran.dart';
 import 'package:flutter_application_1/Screen/Trangchu.dart';
+import 'package:flutter_application_1/Screen/XemXepHangMan.dart';
 import 'package:flutter_application_1/Screen/Xemxephang.dart';
 import 'package:flutter_application_1/Screen/xemhoso.dart';
 import 'package:flutter_application_1/model/db_content.dart';
@@ -31,14 +33,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const TrangchuSrceen(),
+      home: const XemXhangMan(),
     );
   }
 }
-

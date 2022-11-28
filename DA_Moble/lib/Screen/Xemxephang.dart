@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Doikhang.dart';
 import 'package:flutter_application_1/component/widget_item.dart';
 import 'package:flutter_application_1/model/db_content.dart';
 
@@ -15,82 +16,108 @@ class _phanhangState extends State<phanhang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-           margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
-        padding: EdgeInsets.all(5),
-      
-        
-        child: Column(
+        body: Container(
+      margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+      padding: EdgeInsets.all(5),
+      child: Column(children: [
+        Row(
           children: [
-             Text('Giải đấu xếp hạng',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 22),),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image(
-                    height: 40,
-                    width: 40,
-                    image: AssetImage('assets/images/shield (8).png')),
-                  SizedBox(
-                  height: 60,
-                  width: 60,
-                  child: Image(image: AssetImage('assets/images/shield (7).png'))),
-                SizedBox(
-                  height: 90,
-                  width: 90,
-                  child: Image(image: AssetImage('assets/images/shield (2).png'))),
-                   SizedBox(
-                  height: 60,
-                  width: 60,
-                  child: Image(image: AssetImage('assets/images/shield (7).png'))),
-                   Image(
-                    height: 40,
-                    width: 40,
-                    image: AssetImage('assets/images/shield (8).png')),
-              ],),
-           Container(
-             decoration: BoxDecoration(
-                            border: Border(
-                              bottom: BorderSide(color: Colors.grey,width: 2)
-                            )
-                          ),
-             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-               children: [
-                 TextButton(
-                                  child: const Text('TOP RANK',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18)),
-                                  onPressed: () {}),
-                                   TextButton(
-                              child: const Text('TOP SCORES',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18)),
-                              onPressed: () {}),
-               ],
-             ),
-           ),
-                            
-             
-              Column(children: [
-                Container(               
-                    height: MediaQuery.of(context).size.height * 0.65,
-                    child: Column(children: [                    
-                      Expanded(
-                        child: ListView.builder(
-                          itemCount: db_context.items.length,
-                          itemBuilder: (context, index) {
-                            return Info_rank_frame(
-                              info: db_context.items[index],
-                              
-                            );
-                          },
-                        ),
-                      )
-                    ]))
-              ])
-            ]),
-      )
-    );
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
+              child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: ((context) => DoikhangScreen()),
+                      ),
+                    );
+                  },
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.grey,
+                  )),
+            ),
+            Text(
+              'Giải đấu xếp hạng',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22),
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(
+                height: 40,
+                width: 40,
+                image: AssetImage('assets/images/shield (8).png')),
+            SizedBox(
+                height: 60,
+                width: 60,
+                child:
+                    Image(image: AssetImage('assets/images/shield (7).png'))),
+            SizedBox(
+                height: 90,
+                width: 90,
+                child:
+                    Image(image: AssetImage('assets/images/shield (2).png'))),
+            SizedBox(
+                height: 60,
+                width: 60,
+                child:
+                    Image(image: AssetImage('assets/images/shield (7).png'))),
+            Image(
+                height: 40,
+                width: 40,
+                image: AssetImage('assets/images/shield (8).png')),
+          ],
+        ),
+        Container(
+          decoration: BoxDecoration(
+              border: Border(bottom: BorderSide(color: Colors.grey, width: 2))),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              TextButton(
+                  child: const Text('TOP RANK',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18)),
+                  onPressed: () {}),
+              TextButton(
+                  child: const Text('TOP SCORES',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18)),
+                  onPressed: () {}),
+            ],
+          ),
+        ),
+        Column(children: [
+          Container(
+              height: MediaQuery.of(context).size.height * 0.65,
+              child: Column(children: [
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: db_context.items.length,
+                    itemBuilder: (context, index) {
+                      return Info_rank_frame(
+                        info: db_context.items[index],
+                      );
+                    },
+                  ),
+                )
+              ]))
+        ])
+      ]),
+    ));
   }
 }
 

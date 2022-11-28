@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/Screen/Dangnhap.dart';
 import 'package:flutter_application_1/Screen/Trangchu.dart';
+import 'package:flutter_application_1/Screen/screen.dart';
 
 class QuanlitaikhoanScreen extends StatefulWidget {
   const QuanlitaikhoanScreen({super.key});
@@ -42,7 +43,7 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
       //   title: Text('Quản lí tài khoản'),
       // ),
       body: Container(
-        margin: EdgeInsets.fromLTRB(0, mlr+10, 0, 0),
+        margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
         child: SingleChildScrollView(
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
             Column(
@@ -54,12 +55,15 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
                       margin: EdgeInsets.fromLTRB(0, 0, r / 2 / 2, 0),
                       child: InkWell(
                         onTap: () {
-                          Navigator.of(context).popUntil((route) => route.isFirst);
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => TrangchuSrceen()));
-                          Navigator.pop(context);
+                          // Navigator.of(context).popUntil((route) => route.isFirst);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TrangchuSrceen()));
+                          // Navigator.pop(context);
                         },
                         child: Icon(
-                           Icons.arrow_back,
+                          Icons.arrow_back,
                           color: Colors.black.withOpacity(0.6),
                           size: 30,
                         ),
@@ -99,7 +103,12 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
                     style: OutlinedButton.styleFrom(
                       side: BorderSide(color: orange),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => screen_home())));
+                    },
                     child: Container(
                       margin: EdgeInsets.fromLTRB(0, 10, 10, 10),
                       child: Row(
@@ -143,7 +152,10 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
                     ),
                     onPressed: () {
                       Navigator.of(context).popUntil((route) => route.isFirst);
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => DangnhapScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DangnhapScreen()));
                       //Navigator.pop(context);
                     },
                     child: Container(

@@ -18,6 +18,7 @@ import 'package:flutter_application_1/Screen/Quanlytaikhoan.dart';
 import 'package:flutter_application_1/Screen/Quenmatkhau.dart';
 import 'package:flutter_application_1/Screen/Timtran.dart';
 import 'package:flutter_application_1/Screen/Trangchu.dart';
+import 'package:flutter_application_1/Screen/XemXepHangMan.dart';
 import 'package:flutter_application_1/Screen/Xemxephang.dart';
 import 'package:flutter_application_1/Screen/xemhoso.dart';
 import 'package:flutter_application_1/model/db_content.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const TrangchuSrceen(),
+      home: const XemXhangMan(),
     );
   }
 }

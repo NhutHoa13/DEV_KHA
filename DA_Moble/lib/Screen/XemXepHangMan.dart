@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/component/widget_item.dart';
+import 'package:flutter_application_1/model/db_content.dart';
 
 class XemXhangMan extends StatefulWidget {
   const XemXhangMan({super.key});
@@ -14,111 +16,65 @@ class _XemXhangManState extends State<XemXhangMan> {
 
   @override
   Widget build(BuildContext context) {
-    var r = MediaQuery.of(context).size.width / 5;
+        var mlr = 20.0;
+    var r = MediaQuery.of(context).size.width - mlr;
+    var l = MediaQuery.of(context).size.width - mlr;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Màn 1",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+        title: Container(
+          
+          child: Text(
+            "Màn 1",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          ),
         ),
         centerTitle: true,
         backgroundColor: Colors.orange,
         shadowColor: Colors.black,
+        
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                  primary: Colors.orange, //màu nền ẩn hiện của button
-                  side: BorderSide(
-                      color: Colors.orange,
-                      width: 2)), //chỉnh màu viền cho button
-
-              onPressed: (() {}),
-              child: Container(
-                height: 60,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(2, 10, 10, 10),
-                      child: Image(
-                        image: AssetImage("assets/images/medal.png"),
-                        width: 20,
+      body:   
+         Column(children: [
+          Container(
+            padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
+              height: MediaQuery.of(context).size.height * 0.6,
+              child: Column(children: [ 
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: db_context.items.length,
+                    itemBuilder: (context, index) {
+                      return Info_rank_frame(
+                        info: db_context.items[index],
+                      );
+                    },
+                  ),
+                )
+              ])),
+              ConstrainedBox(
+                        constraints: BoxConstraints(minHeight: 50, minWidth: r),
+                        child: TextButton(
+                            style: ButtonStyle(
+                                foregroundColor:
+                                    MaterialStateProperty.all<Color>(Colors.white),
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(orange),
+                                shape:
+                                    MaterialStateProperty.all<RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(10),
+                                            side: BorderSide(color: orange)))),
+                            onPressed: () {
+                              // Navigator.of(context).popUntil((route) => route.isFirst);
+                              // Navigator.push(context, MaterialPageRoute(builder:(context) => const DangkyScreen()));
+                            },
+                            child: Text(
+                              'Quay lại',
+                              style: TextStyle(
+                                  fontSize: 22, fontWeight: FontWeight.bold),
+                            )),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: ClipOval(
-                        child: Image(
-                          image: AssetImage("assets/images/logo.jpg"),
-                          width: 40,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(5, 5, 150, 5),
-                      child: Text("Nhựt Hòa"),
-                    ),
-                    TextButton(
-                      onPressed: (() {}),
-                      child: Text(
-                        "Score",
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                  primary: Colors.orange, //màu nền ẩn hiện của button
-                  side: BorderSide(
-                      color: Colors.orange,
-                      width: 2)), //chỉnh màu viền cho button
-
-              onPressed: (() {}),
-              child: Container(
-                height: 60,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(2, 10, 10, 10),
-                      child: Image(
-                        image: AssetImage("assets/images/medal.png"),
-                        width: 20,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: ClipOval(
-                        child: Image(
-                          image: AssetImage("assets/images/profile.png"),
-                          width: 40,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(5, 5, 170, 5),
-                      child: Text("Cao kỳ"),
-                    ),
-                    TextButton(
-                      onPressed: (() {}),
-                      child: Text(
-                        "Score",
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
+        ])
+      );
   }
 }

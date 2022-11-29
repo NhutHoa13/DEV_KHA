@@ -5,6 +5,7 @@ import 'package:flutter_application_1/Screen/Chinhsuahoso.dart';
 import 'package:flutter_application_1/Screen/Choicanhan.dart';
 import 'package:flutter_application_1/Screen/Dangky.dart';
 import 'package:flutter_application_1/Screen/Dangnhap.dart';
+import 'package:flutter_application_1/Screen/Dapan.dart';
 import 'package:flutter_application_1/Screen/Doianh.dart';
 import 'package:flutter_application_1/Screen/Doimatkhau.dart';
 
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const TongketScreen(),
+      home: const DapanScreen(),
     );
   }
 }

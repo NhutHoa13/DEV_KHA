@@ -22,7 +22,6 @@ import 'package:flutter_application_1/Screen/XemXepHangMan.dart';
 import 'package:flutter_application_1/Screen/Xemxephang.dart';
 import 'package:flutter_application_1/Screen/xemhoso.dart';
 import 'package:flutter_application_1/model/db_content.dart';
-
 import 'Screen/Trangchu.dart';
 
 void main() {

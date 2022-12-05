@@ -5,20 +5,31 @@ import 'package:flutter_application_1/Screen/Doikhang.dart';
 import 'package:flutter_application_1/component/widget_item.dart';
 import 'package:flutter_application_1/model/db_content.dart';
 
-class phanhang extends StatefulWidget {
-  const phanhang({super.key});
+class Xephangdoikhang extends StatefulWidget {
+  const Xephangdoikhang({super.key});
 
   @override
-  State<phanhang> createState() => _phanhangState();
+  State<Xephangdoikhang> createState() => _XephangdoikhangState();
 }
 
-class _phanhangState extends State<phanhang> {
+class _XephangdoikhangState extends State<Xephangdoikhang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
-      padding: EdgeInsets.all(5),
+     // margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+      padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+       height: MediaQuery.of(context).size.height,
+       width: MediaQuery.of(context).size.width,
+      
+        // decoration: BoxDecoration(
+        //     image: DecorationImage(
+        //       image: AssetImage(
+        //         "assets/images/backgroup2.png",
+        //       ),
+        //       fit: BoxFit.cover,
+        //     ),
+        //   ),
       child: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,7 +46,7 @@ class _phanhangState extends State<phanhang> {
                   )),
             ),
             Text(
-              'Giải đấu xếp hạng',
+              'Xếp hạng đối kháng',
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -185,22 +196,87 @@ class _phanhangState extends State<phanhang> {
             ],
           ),
         ),
-        // Column(children: [
-        //   Container(
-        //       height: MediaQuery.of(context).size.height * 0.65,
-        //       child: Column(children: [
-        //         Expanded(
-        //           child: ListView.builder(
-        //             itemCount: db_context.items.length,
-        //             itemBuilder: (context, index) {
-        //               return Info_rank_frame(
-        //                 info: db_context.items[index],
-        //               );
-        //             },
-        //           ),
-        //         )
-        //       ]))
-        // ])
+        Column(children: [
+          Container(
+              height: MediaQuery.of(context).size.height * 0.45,
+              child: Column(children: [
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: db_context.items.length,
+                    itemBuilder: (context, index) {
+                      return DoikhangFrame(
+                        info: db_context.items[index],
+                      );
+                    },
+                  ),
+                )
+              ]))
+        ]),
+        Container(
+          margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+          padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+          decoration: BoxDecoration(
+              color: Colors.orange,
+              gradient: LinearGradient(colors: [
+                Colors.orange,
+                Colors.white,
+              ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+          child: Container(
+            margin: EdgeInsets.fromLTRB(10, 0, 20, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      '99',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: Colors.white),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                      child: SizedBox(
+                        width: 60,
+                        height: 60,
+                        child: ClipOval(
+                          child: Image(
+                            image: AssetImage('assets/images/profile.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Nhut Hoa',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Image(
+                      height: 30,
+                      width: 30,
+                      image: AssetImage('assets/images/trophy (4).png'),
+                    ),
+                    Text(
+                      'Score',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
       ]),
     ));
   }

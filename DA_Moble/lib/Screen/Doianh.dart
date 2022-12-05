@@ -109,46 +109,26 @@ class _DoianhScreenState extends State<DoianhScreen> {
                   ],)
                  
                 
-              },],)
-              // GridView.count(  
-              //   crossAxisCount: 3,  
-              //   crossAxisSpacing: 4.0,  
-              //   mainAxisSpacing: 8.0,  
-              //   children: List.generate(choices.length, (index) {  
-              //     return Center(  
-              //       child: SelectCard(choice: choices[index]),  
-              //     );  
-              //   }  
-              //   )  ,
-              //    Container(
-              //   alignment: Alignment.center,
-              //   child: Padding(
-              //       padding: const EdgeInsets.all(8.0),
-              //       child:  ConstrainedBox(
-              //               constraints: BoxConstraints(minHeight: 40, minWidth: 200),
-              //               child: TextButton(
-              //                   style: ButtonStyle(
-              //                       foregroundColor:
-              //                           MaterialStateProperty.all<Color>(Colors.white),
-              //                       backgroundColor:
-              //                           MaterialStateProperty.all<Color>(orange),
-              //                       shape:
-              //                           MaterialStateProperty.all<RoundedRectangleBorder>(
-              //                               RoundedRectangleBorder(
-              //                                   borderRadius: BorderRadius.circular(10),
-              //                                   side: BorderSide(color: orange)))),
-              //                   onPressed: () {
-              //                     Navigator.of(context).popUntil((route) => route.isFirst);
-              //                     Navigator.push(context, MaterialPageRoute(builder:(context) => const ChinhsuahosoScreen()));
-              //                   },
-              //                   child: Text(
-              //                     'Lưu',
-              //                     style: TextStyle(
-              //                         fontSize: 18, fontWeight: FontWeight.bold),
-              //                   )),
-              //             ),
-              //       ),
-              // ),
+              },],),
+            InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Container(
+            margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+            width: 250,
+            height: 50,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10), color: orange),
+                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                 Text(
+                'Quay lại',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.white),
+              )
+                ],)
+          ),
+        )
          ],),
       )
       ,),

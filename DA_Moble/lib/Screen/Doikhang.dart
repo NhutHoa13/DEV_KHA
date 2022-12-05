@@ -5,7 +5,9 @@ import 'package:flutter/src/widgets/framework.dart';
 
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter_application_1/Screen/Timtran.dart';
+import 'package:flutter_application_1/Screen/Xemlichsudau.dart';
 import 'package:flutter_application_1/Screen/Xemxephang.dart';
+import 'package:flutter_application_1/Screen/Xephangdoikhang.dart';
 import 'package:flutter_application_1/Screen/xemhoso.dart';
 
 class DoikhangScreen extends StatefulWidget {
@@ -16,6 +18,8 @@ class DoikhangScreen extends StatefulWidget {
 }
 
 class _DoikhangScreenState extends State<DoikhangScreen> {
+  var style1 = TextStyle(
+      fontWeight: FontWeight.bold, color: Colors.black,fontSize: 18);
   var orange = Color.fromARGB(255, 255, 172, 47);
   @override
   Widget build(BuildContext context) {
@@ -27,6 +31,16 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
       body: Container(
         margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
         padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+         decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                "assets/images/backgroup1.png",
+              ),
+              fit: BoxFit.fill,
+            ),
+          ),
         child: Column(
           children: [
             Center(
@@ -39,16 +53,22 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
             )),
             Row(
               children: [
-                ClipOval(
-                  child: Image(
-                      height: 50,
-                      width: 50,
-                      image: AssetImage('assets/images/logo.jpg')),
-                ),
+               CircleAvatar(
+                        radius: 43,
+                          backgroundColor: Colors.white,
+                        child: CircleAvatar(
+                          radius: 40,
+                          backgroundImage:
+                              AssetImage('assets/images/profile.png'),
+                        )),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: [Text('Nhựt Hòa'), Text('Level: 10')],
+                   
+                    children: [Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                      child: Text('Nhựt Hòa',style: style1,),
+                    ), Text('Level: 10',style: style1,)],
                   ),
                 )
               ],
@@ -70,15 +90,14 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                           side: MaterialStateProperty.all(
-                              BorderSide(color: Colors.black)),
+                              BorderSide(color: Colors.white)),
                           backgroundColor:
                               MaterialStatePropertyAll<Color>(orange),
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15.0)))),
                       onPressed: () {
-                        Navigator.of(context)
-                            .popUntil((route) => route.isFirst);
+                       
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -109,7 +128,7 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                           side: MaterialStateProperty.all(
-                              BorderSide(color: Colors.black)),
+                              BorderSide(color: Colors.white)),
                           backgroundColor:
                               MaterialStatePropertyAll<Color>(orange),
                           shape: MaterialStateProperty.all(
@@ -120,7 +139,7 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const phanhang()));
+                                builder: (context) => const Xephangdoikhang()));
                       },
                       // child: const Padding(
                       //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -146,15 +165,17 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                           side: MaterialStateProperty.all(
-                              BorderSide(color: Colors.black)),
+                              BorderSide(color: Colors.white)),
                           backgroundColor:
                               MaterialStatePropertyAll<Color>(orange),
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15.0)))),
                       onPressed: () {
-                        //    Navigator.of(context).popUntil((route) => route.isFirst);
-                        // Navigator.push(context, MaterialPageRoute(builder:(context) => const screen_home()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const XemlichdauScreen()));
                       },
                       // child: const Padding(
                       //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),

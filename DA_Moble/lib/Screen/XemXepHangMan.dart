@@ -16,14 +16,13 @@ class _XemXhangManState extends State<XemXhangMan> {
 
   @override
   Widget build(BuildContext context) {
-        var mlr = 20.0;
+    var mlr = 20.0;
     var r = MediaQuery.of(context).size.width - mlr;
     var l = MediaQuery.of(context).size.width - mlr;
 
     return Scaffold(
       appBar: AppBar(
         title: Container(
-          
           child: Text(
             "Màn 1",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
@@ -32,49 +31,113 @@ class _XemXhangManState extends State<XemXhangMan> {
         centerTitle: true,
         backgroundColor: Colors.orange,
         shadowColor: Colors.black,
-        
       ),
-      body:   
-         Column(children: [
-          Container(
-            padding: EdgeInsets.fromLTRB(0, 30, 0, 30),
-              height: MediaQuery.of(context).size.height * 0.6,
-              child: Column(children: [ 
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: db_context.items.length,
-                    itemBuilder: (context, index) {
-                      return Info_rank_frame(
-                        info: db_context.items[index],
-                      );
-                    },
-                  ),
-                )
-              ])),
-              ConstrainedBox(
-                        constraints: BoxConstraints(minHeight: 50, minWidth: r),
-                        child: TextButton(
-                            style: ButtonStyle(
-                                foregroundColor:
-                                    MaterialStateProperty.all<Color>(Colors.white),
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(orange),
-                                shape:
-                                    MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(10),
-                                            side: BorderSide(color: orange)))),
-                            onPressed: () {
-                              // Navigator.of(context).popUntil((route) => route.isFirst);
-                              // Navigator.push(context, MaterialPageRoute(builder:(context) => const DangkyScreen()));
-                            },
-                            child: Text(
-                              'Quay lại',
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.bold),
-                            )),
+      body: Column(children: [
+        Container(
+            padding: EdgeInsets.fromLTRB(0, 30, 0, 10),
+            height: MediaQuery.of(context).size.height * 0.6,
+            child: Column(children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: db_context.items.length,
+                  itemBuilder: (context, index) {
+                    return ManFrame(
+                      info: db_context.items[index],
+                    );
+                  },
+                ),
+              )
+            ])),
+        Container(
+          margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+          padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+          decoration: BoxDecoration(
+              color: Colors.orange,
+              gradient: LinearGradient(
+                  colors: [
+                    Colors.orange,
+                   Colors.white,
+                  
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter)),
+          child: Container(
+            margin: EdgeInsets.fromLTRB(10, 0, 20, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      '99',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: Colors.white),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                      child: SizedBox(
+                        width: 60,
+                        height: 60,
+                        child: ClipOval(
+                          child: Image(
+                            image: AssetImage('assets/images/profile.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-        ])
-      );
+                    ),
+                    Text(
+                      'Nhut Hoa',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Image(
+                      height: 30,
+                      width: 30,
+                      image: AssetImage('assets/images/trophy (4).png'),
+                    ),
+                    Text(
+                      '1000',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+       
+        InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Container(
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            width: r,
+            height: 50,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10), color: orange),
+                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                 Text(
+                'Quay lại',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.white),
+              )
+                ],)
+          ),
+        )
+      ]),
+    );
   }
 }

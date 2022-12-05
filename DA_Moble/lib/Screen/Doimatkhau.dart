@@ -11,6 +11,19 @@ class DoimatkhauScreen extends StatefulWidget {
 }
 
 class _DoimatkhauScreenState extends State<DoimatkhauScreen> {
+   bool ishiden = true;
+  Icon iconshow = Icon(Icons.visibility_off);
+  void hiden(){
+    setState(() {
+      if(ishiden=!ishiden){
+        setState(() {
+          iconshow = Icon(Icons.visibility_off);
+        });
+      }else{
+         iconshow = Icon(Icons.visibility);
+      }
+    });
+  }
    var orange = Color.fromARGB(255, 255, 172, 47);
   @override
   Widget build(BuildContext context) {
@@ -29,8 +42,9 @@ class _DoimatkhauScreenState extends State<DoimatkhauScreen> {
                    
                            InkWell(
                             onTap: () {
-                              Navigator.of(context).popUntil((route) => route.isFirst);
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const ChinhsuahosoScreen()));
+                              Navigator.pop(context);
+                              // Navigator.of(context).popUntil((route) => route.isFirst);
+                              // Navigator.push(context, MaterialPageRoute(builder: (context) => const ChinhsuahosoScreen()));
                             },
                             child: Icon(
                               Icons.arrow_back,
@@ -67,13 +81,18 @@ class _DoimatkhauScreenState extends State<DoimatkhauScreen> {
                             style: TextStyle(
                                 fontSize: 18,
                                 color: Color.fromARGB(255, 0, 0, 0)),
-                           
+                           obscureText: ishiden,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: orange)),
                               border: OutlineInputBorder(),
                              //hintText: 'Tên người dùng',
-                           suffixIcon: Icon(Icons.remove_red_eye),
+                           suffixIcon: GestureDetector(
+                                onTap: () {
+                                  hiden();
+                                },
+                                child: iconshow,
+                              ),
                             
                               hintStyle: TextStyle(
                                   color: Color.fromARGB(255, 58, 58, 58),
@@ -103,13 +122,18 @@ class _DoimatkhauScreenState extends State<DoimatkhauScreen> {
                             style: TextStyle(
                                 fontSize: 18,
                                 color: Color.fromARGB(255, 0, 0, 0)),
-                           
+                           obscureText: ishiden,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: orange)),
                               border: OutlineInputBorder(),
                              //hintText: 'Tên người dùng',
-                           suffixIcon: Icon(Icons.remove_red_eye),
+                           suffixIcon: GestureDetector(
+                                onTap: () {
+                                  hiden();
+                                },
+                                child: iconshow,
+                              ),
                             
                               hintStyle: TextStyle(
                                   color: Color.fromARGB(255, 58, 58, 58),
@@ -139,13 +163,18 @@ class _DoimatkhauScreenState extends State<DoimatkhauScreen> {
                             style: TextStyle(
                                 fontSize: 18,
                                 color: Color.fromARGB(255, 0, 0, 0)),
-                           
+                            obscureText: ishiden,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: orange)),
                               border: OutlineInputBorder(),
                              //hintText: 'Tên người dùng',
-                           suffixIcon: Icon(Icons.remove_red_eye),
+                           suffixIcon: GestureDetector(
+                                onTap: () {
+                                  hiden();
+                                },
+                                child: iconshow,
+                              ),
                             
                               hintStyle: TextStyle(
                                   color: Color.fromARGB(255, 58, 58, 58),
@@ -176,8 +205,9 @@ class _DoimatkhauScreenState extends State<DoimatkhauScreen> {
                                                 borderRadius: BorderRadius.circular(20),
                                                 side: BorderSide(color: orange)))),
                                 onPressed: () {
-                                  Navigator.of(context).popUntil((route) => route.isFirst);
-                                  Navigator.push(context, MaterialPageRoute(builder:(context) => const ChinhsuahosoScreen()));
+                                  Navigator.pop(context);
+                                 // Navigator.of(context).popUntil((route) => route.isFirst);
+                                  // Navigator.push(context, MaterialPageRoute(builder:(context) => const ChinhsuahosoScreen()));
                                 },
                                 child: Text(
                                   'Lưu',

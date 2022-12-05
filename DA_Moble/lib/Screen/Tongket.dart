@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/XemXepHangMan.dart';
 import 'package:flutter_application_1/component/widget_item.dart';
 import 'package:flutter_application_1/model/db_content.dart';
 
@@ -24,22 +25,7 @@ class _TongketScreenState extends State<TongketScreen> {
       body: SingleChildScrollView(child: Container(
           margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
       child:  Column(children: [
-        Row(children: [  InkWell(
-                              onTap: () {
-                                // Navigator.of(context).popUntil((route) => route.isFirst);
-                                // Navigator.push(
-                                //     context,
-                                //     MaterialPageRoute(
-                                //         builder: (context) =>
-                                //             TrangchuSrceen()));
-                                // Navigator.pop(context);
-                              },
-                              child: Icon(
-                                Icons.arrow_back,
-                                color: Colors.black.withOpacity(0.6),
-                                size: 30,
-                              ),
-                            ),],),
+       
       Row(
 mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -108,53 +94,47 @@ mainAxisAlignment: MainAxisAlignment.center,
     
        Padding(
          padding: const EdgeInsets.all(8.0),
-         child: ConstrainedBox(
-                          constraints: BoxConstraints(minHeight: 50, minWidth: r/1.2),
-                          child: TextButton(
-                              style: ButtonStyle(
-                                  foregroundColor:
-                                      MaterialStateProperty.all<Color>(Colors.white),
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(orange),
-                                  shape:
-                                      MaterialStateProperty.all<RoundedRectangleBorder>(
-                                          RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(10),
-                                              side: BorderSide(color: orange)))),
-                              onPressed: () {
-                                // Navigator.of(context).popUntil((route) => route.isFirst);
-                                // Navigator.push(context, MaterialPageRoute(builder:(context) => const DangkyScreen()));
-                              },
-                              child: Text(
-                                'Bảng xếp hạng màn',
-                                style: TextStyle(
-                                    fontSize: 22, fontWeight: FontWeight.bold),
-                              )),
-                        ),
+         child:  InkWell(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => XemXhangMan()));
+          },
+          child: Container(
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            width: r-mlr,
+            height: 50,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10), color: orange),
+                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                 Text(
+                              'Bang xep hang',
+                              style: TextStyle(
+                                  fontSize: 22, fontWeight: FontWeight.bold,color: Colors.white),
+                            )
+                ],)
+          ),
+        )
        ),
-                      ConstrainedBox(
-                        constraints: BoxConstraints(minHeight: 50, minWidth: r/1.2),
-                        child: TextButton(
-                            style: ButtonStyle(
-                                foregroundColor:
-                                    MaterialStateProperty.all<Color>(Colors.white),
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(orange),
-                                shape:
-                                    MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(10),
-                                            side: BorderSide(color: orange)))),
-                            onPressed: () {
-                              // Navigator.of(context).popUntil((route) => route.isFirst);
-                              // Navigator.push(context, MaterialPageRoute(builder:(context) => const DangkyScreen()));
-                            },
-                            child: Text(
+                     
+                      InkWell(
+          onTap: () {},
+          child: Container(
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            width: r-mlr,
+            height: 50,
+            decoration: BoxDecoration(
+              
+                borderRadius: BorderRadius.circular(10), color: orange),
+                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                 Text(
                               'Chơi lại',
                               style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.bold),
-                            )),
-                      ),
+                                  fontSize: 22, fontWeight: FontWeight.bold,color: Colors.white),
+                            )
+                ],)
+          ),
+        )
     ]),
     )
     ),

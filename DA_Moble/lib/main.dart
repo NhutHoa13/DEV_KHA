@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screen/Bando.dart';
 import 'package:flutter_application_1/Screen/Caidat.dart';
 import 'package:flutter_application_1/Screen/CapNhatMatKhau.dart';
 import 'package:flutter_application_1/Screen/Chinhsuahoso.dart';
@@ -21,14 +22,18 @@ import 'package:flutter_application_1/Screen/Timtran.dart';
 import 'package:flutter_application_1/Screen/Tongket.dart';
 import 'package:flutter_application_1/Screen/Trangchu.dart';
 import 'package:flutter_application_1/Screen/XemXepHangMan.dart';
+import 'package:flutter_application_1/Screen/Xemlichsudau.dart';
 import 'package:flutter_application_1/Screen/Xemxephang.dart';
+import 'package:flutter_application_1/Screen/aaa.dart';
 import 'package:flutter_application_1/Screen/xemhoso.dart';
 import 'package:flutter_application_1/model/db_content.dart';
+import 'package:flutter_application_1/model/db_lichsudau.dart';
 
 import 'Screen/Trangchu.dart';
 
 void main() {
   db_context.createData();
+  db_lichsudau.createData();
   runApp(const MyApp());
 }
 
@@ -40,7 +45,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const DapanScreen(),
+      home:TrangchuSrceen()
     );
   }
 }

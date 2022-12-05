@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/Screen/CapNhatMatKhau.dart';
 import 'package:flutter_application_1/Screen/Dangky.dart';
 import 'package:flutter_application_1/Screen/Dangnhap.dart';
+import 'package:flutter_application_1/Screen/Laymatkhau.dart';
 
 class QuenmatkhauScreen extends StatefulWidget {
   const QuenmatkhauScreen({super.key});
@@ -56,7 +57,7 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
                               // Navigator.pop(context);
                             },
                             child: Icon(
-                              Icons.clear,
+                              Icons.arrow_back,
                               color: Colors.black.withOpacity(0.6),
                               size: 30,
                             ),
@@ -67,7 +68,7 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                       child: Image(
-                        image: AssetImage('assets/images/language.png'),
+                        image: AssetImage('assets/images/logoapp1.png'),
                         width: r / 2,
                       ),
                     ),
@@ -114,7 +115,7 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: ((context) => CapnhatMk())));
+                                builder: ((context) => LaymatkhauScreen())));
                       },
                       // child: const Padding(
                       //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),

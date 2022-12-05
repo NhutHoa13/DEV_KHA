@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Doianh.dart';
 import 'package:flutter_application_1/Screen/Doimatkhau.dart';
 import 'package:flutter_application_1/Screen/Quanlihoso.dart';
 import 'package:flutter_application_1/Screen/screen.dart';
@@ -33,11 +34,11 @@ class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
                 children: [
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).popUntil((route) => route.isFirst);
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const QuanlihosoScreen()));
+                       Navigator.pop(context);
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => const QuanlihosoScreen()));
                     },
                     child: Icon(
                       Icons.arrow_back,
@@ -86,15 +87,21 @@ class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
                   ],
                 ),
               ),
+              
               Container(
                 alignment: Alignment.center,
-                child: Text(
-                  'Thay đổi ảnh đại diện',
-                  style: TextStyle(
+                child: InkWell(
+                  onTap:(){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => DoianhScreen(),));
+                  },
+                  child:Text('Thay đổi ảnh đại diện', style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.orange,
-                  ),
+                  ),)
+                
+                  
+                 
                 ),
               ),
               Padding(
@@ -179,8 +186,8 @@ class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
                     ),
                     TextField(
                       onTap: () {
-                        Navigator.of(context)
-                            .popUntil((route) => route.isFirst);
+                        // Navigator.of(context)
+                        //     .popUntil((route) => route.isFirst);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -227,13 +234,14 @@ class _ChinhsuahosoScreenState extends State<ChinhsuahosoScreen> {
                                     borderRadius: BorderRadius.circular(20),
                                     side: BorderSide(color: orange)))),
                         onPressed: () {
-                          Navigator.of(context)
-                              .popUntil((route) => route.isFirst);
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const QuanlihosoScreen()));
+                          Navigator.pop(context);
+                          // Navigator.of(context)
+                          //     .popUntil((route) => route.isFirst);
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) =>
+                          //             const QuanlihosoScreen()));
                         },
                         child: Text(
                           'Lưu',

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Dangnhap.dart';
 
 class LaymatkhauScreen extends StatefulWidget {
   const LaymatkhauScreen({super.key});
@@ -10,6 +11,19 @@ class LaymatkhauScreen extends StatefulWidget {
 }
 
 class _LaymatkhauScreenState extends State<LaymatkhauScreen> {
+   bool ishiden = true;
+  Icon iconshow = Icon(Icons.visibility_off);
+  void hiden(){
+    setState(() {
+      if(ishiden=!ishiden){
+        setState(() {
+          iconshow = Icon(Icons.visibility_off);
+        });
+      }else{
+        iconshow = Icon(Icons.visibility);
+      }
+    });
+  }
   var orange = Color.fromARGB(255, 255, 172, 47);
   var myLabelStyle = TextStyle(
     color: Colors.black.withOpacity(0.3),
@@ -47,9 +61,11 @@ class _LaymatkhauScreenState extends State<LaymatkhauScreen> {
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
                                         InkWell(
-                                          onTap: () {},
+                                          onTap: () {
+                                            Navigator.pop(context);
+                                          },
                                           child: Icon(
-                                            Icons.clear,
+                                            Icons.arrow_back,
                                             color: Colors.black.withOpacity(0.6),
                                             size: 30,
                                           ),
@@ -92,14 +108,23 @@ class _LaymatkhauScreenState extends State<LaymatkhauScreen> {
                           style: TextStyle(
                               fontSize: 18,
                               color: Color.fromARGB(255, 0, 0, 0)),
-                          obscureText: true,
+                          obscureText: ishiden,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: orange)),
                             border: OutlineInputBorder(),
                             hintText: "Nhập mật khẩu",
                             prefixIcon: (Icon(Icons.lock_outline)),
-                            suffixIcon: Icon(Icons.remove_red_eye),
+                            suffixIcon: GestureDetector(
+                              onTap: (() {
+                                setState(() {
+                                  hiden();
+                                });
+                              }
+                              
+                            ),
+                            child: iconshow,
+                            ),
                             hintStyle: TextStyle(
                                 color: Color.fromARGB(255, 58, 58, 58),
                                 fontSize: 15),
@@ -127,14 +152,21 @@ class _LaymatkhauScreenState extends State<LaymatkhauScreen> {
                           style: TextStyle(
                               fontSize: 18,
                               color: Color.fromARGB(255, 0, 0, 0)),
-                          obscureText: true,
+                          obscureText: ishiden,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: orange)),
                             border: OutlineInputBorder(),
                             hintText: "Xác nhận mật khẩu",
                             prefixIcon: (Icon(Icons.lock_outline)),
-                            suffixIcon: Icon(Icons.remove_red_eye),
+                            suffixIcon: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  hiden();
+                                });
+                              },
+                              child: iconshow,
+                            ),
                             hintStyle: TextStyle(
                                 color: Color.fromARGB(255, 58, 58, 58),
                                 fontSize: 15),
@@ -162,7 +194,9 @@ class _LaymatkhauScreenState extends State<LaymatkhauScreen> {
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10.0)))),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>DangnhapScreen(),));
+                      },
                       // child: const Padding(
                       //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: Text(

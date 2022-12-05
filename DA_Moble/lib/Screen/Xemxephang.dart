@@ -185,22 +185,82 @@ class _phanhangState extends State<phanhang> {
             ],
           ),
         ),
-        // Column(children: [
-        //   Container(
-        //       height: MediaQuery.of(context).size.height * 0.65,
-        //       child: Column(children: [
-        //         Expanded(
-        //           child: ListView.builder(
-        //             itemCount: db_context.items.length,
-        //             itemBuilder: (context, index) {
-        //               return Info_rank_frame(
-        //                 info: db_context.items[index],
-        //               );
-        //             },
-        //           ),
-        //         )
-        //       ]))
-        // ])
+        Column(children: [
+          Container(
+              height: MediaQuery.of(context).size.height * 0.45,
+              child: Column(children: [
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: db_context.items.length,
+                    itemBuilder: (context, index) {
+                      return CanhanFrame(
+                        info: db_context.items[index],
+                      );
+                    },
+                  ),
+                )
+              ]))
+        ]),
+        Container(
+          margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+          padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+          decoration: BoxDecoration(
+              color: Colors.orange,
+              gradient: LinearGradient(colors: [
+                Colors.orange,
+                Colors.white,
+              ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+          child: Container(
+            margin: EdgeInsets.fromLTRB(10, 0, 20, 0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      '99',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                          color: Colors.white),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                      child: SizedBox(
+                        width: 60,
+                        height: 60,
+                        child: ClipOval(
+                          child: Image(
+                            image: AssetImage('assets/images/profile.png'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Nhut Hoa',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '1000 KN',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
       ]),
     ));
   }

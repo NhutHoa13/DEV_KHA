@@ -100,22 +100,22 @@ class _phanhangState extends State<phanhang> {
             ],
           ),
         ),
-        Column(children: [
-          Container(
-              height: MediaQuery.of(context).size.height * 0.65,
-              child: Column(children: [
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: db_context.items.length,
-                    itemBuilder: (context, index) {
-                      return Info_rank_frame(
-                        info: db_context.items[index],
-                      );
-                    },
-                  ),
-                )
-              ]))
-        ])
+        // Column(children: [
+        //   Container(
+        //       height: MediaQuery.of(context).size.height * 0.65,
+        //       child: Column(children: [
+        //         Expanded(
+        //           child: ListView.builder(
+        //             itemCount: db_context.items.length,
+        //             itemBuilder: (context, index) {
+        //               return Info_rank_frame(
+        //                 info: db_context.items[index],
+        //               );
+        //             },
+        //           ),
+        //         )
+        //       ]))
+        // ])
       ]),
     ));
   }

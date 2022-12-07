@@ -8,12 +8,14 @@ import 'package:flutter_application_1/Screen/Dangky.dart';
 import 'package:flutter_application_1/Screen/Dangnhap.dart';
 import 'package:flutter_application_1/Screen/Dapan.dart';
 import 'package:flutter_application_1/Screen/Doianh.dart';
+import 'package:flutter_application_1/Screen/Doikhangthang.dart';
+import 'package:flutter_application_1/Screen/Doikhangthua.dart';
 import 'package:flutter_application_1/Screen/Doimatkhau.dart';
 
 import 'package:flutter_application_1/Screen/Hoanthanhbaihoc.dart';
 
 import 'package:flutter_application_1/Screen/Laymatkhau.dart';
-import 'package:flutter_application_1/Screen/Menu/menu.dart';
+
 
 import 'package:flutter_application_1/Screen/Quanlihoso.dart';
 import 'package:flutter_application_1/Screen/Quanlytaikhoan.dart';

@@ -8,6 +8,8 @@ import 'package:flutter_application_1/Screen/Dangky.dart';
 import 'package:flutter_application_1/Screen/Dangnhap.dart';
 import 'package:flutter_application_1/Screen/Laymatkhau.dart';
 
+import '../contraints/color.dart';
+
 class QuenmatkhauScreen extends StatefulWidget {
   const QuenmatkhauScreen({super.key});
 
@@ -16,7 +18,7 @@ class QuenmatkhauScreen extends StatefulWidget {
 }
 
 class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
-  var orange = Color.fromARGB(255, 255, 172, 47);
+ 
   var myLabelStyle = TextStyle(
     color: Colors.black.withOpacity(0.3),
     fontSize: 16,

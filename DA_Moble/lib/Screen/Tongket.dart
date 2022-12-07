@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Doikhangthang.dart';
 import 'package:flutter_application_1/Screen/XemXepHangMan.dart';
 import 'package:flutter_application_1/component/widget_item.dart';
 import 'package:flutter_application_1/model/db_content.dart';
@@ -14,7 +15,7 @@ class TongketScreen extends StatefulWidget {
 }
 
 class _TongketScreenState extends State<TongketScreen> {
-   var orange = Color.fromARGB(255, 255, 172, 47);
+   
   @override
   Widget build(BuildContext context) {
      var mlr = 20.0;

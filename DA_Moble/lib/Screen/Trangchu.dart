@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/Screen/Dangky.dart';
+import 'package:flutter_application_1/Screen/Doikhangthang.dart';
 import 'package:flutter_application_1/Screen/Quanlytaikhoan.dart';
 
 class TrangchuSrceen extends StatefulWidget {
@@ -14,7 +15,7 @@ class TrangchuSrceen extends StatefulWidget {
 }
 
 class _TrangchuSrceenState extends State<TrangchuSrceen> {
-  var orange = Color.fromARGB(255, 255, 172, 47);
+ 
 
   var style = Container(
     decoration: BoxDecoration(

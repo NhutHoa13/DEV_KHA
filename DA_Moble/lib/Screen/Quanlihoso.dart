@@ -17,7 +17,7 @@ class QuanlihosoScreen extends StatefulWidget {
 class _QuanlihosoScreenState extends State<QuanlihosoScreen>  {
   
 
-  var orange = Color.fromARGB(255, 255, 172, 47);
+  
   @override
   Widget build(BuildContext context) {
     var mlr = 20.0;

@@ -4,6 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/component/widget_item.dart';
 import 'package:flutter_application_1/model/db_content.dart';
 
+import '../contraints/color.dart';
+
 class XemXhangMan extends StatefulWidget {
   const XemXhangMan({super.key});
 
@@ -12,7 +14,7 @@ class XemXhangMan extends StatefulWidget {
 }
 
 class _XemXhangManState extends State<XemXhangMan> {
-  var orange = Color.fromARGB(255, 255, 172, 47);
+ 
 
   @override
   Widget build(BuildContext context) {

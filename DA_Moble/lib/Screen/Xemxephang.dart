@@ -21,19 +21,9 @@ class _phanhangState extends State<phanhang> {
       padding: EdgeInsets.all(5),
       child: Column(children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
-              child: InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: Colors.grey,
-                  )),
-            ),
+            
             Text(
               'Giải đấu xếp hạng',
               style: TextStyle(
@@ -41,7 +31,7 @@ class _phanhangState extends State<phanhang> {
                   fontWeight: FontWeight.bold,
                   fontSize: 18),
             ),
-            Text('       ')
+          
           ],
         ),
         Row(

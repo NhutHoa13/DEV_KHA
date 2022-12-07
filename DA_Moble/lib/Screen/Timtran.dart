@@ -17,13 +17,12 @@ class TimtranScreen extends StatefulWidget {
 class _TimtranScreenState extends State<TimtranScreen> {
   
 
-  var orange = Color.fromARGB(255, 255, 172, 47);
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
-        // padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+       
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
          decoration:BoxDecoration(

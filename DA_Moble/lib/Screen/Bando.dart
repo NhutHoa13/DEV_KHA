@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'dart:math' as math;
 
 import 'package:flutter_application_1/Screen/Doikhangthang.dart';
+import 'package:flutter_application_1/Screen/quiz.dart';
 import 'package:flutter_application_1/contraints/button.dart';
 
 class BandoScreen extends StatefulWidget {
@@ -18,7 +19,8 @@ class _BandoScreenState extends State<BandoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+        margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+       // padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
            height: MediaQuery.of(context).size.height,
         width:MediaQuery.of(context).size.width,
          decoration: BoxDecoration(
@@ -33,7 +35,7 @@ class _BandoScreenState extends State<BandoScreen> {
             Column(
               children: [
                   Container(
-              margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+              margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
                       width: MediaQuery.of(context).size.width,
                       height:80,
                         decoration: BoxDecoration(
@@ -46,16 +48,16 @@ class _BandoScreenState extends State<BandoScreen> {
                             children: [
                                Row(
                                  children: [
-                                   Padding(
-                                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                                     child: CircleAvatar(
-                              radius: 43,
-                                      backgroundColor: Colors.white,
-                              child: CircleAvatar(
-                                      radius: 40,
-                                      backgroundImage:
-                                          AssetImage('assets/images/profile.png'),
-                              )),
+                                
+                                      CircleAvatar(
+                        radius: 45,
+                          backgroundColor: Colors.white,
+                        child:    Padding(
+                                     padding: const EdgeInsets.fromLTRB(0, 2, 0, 2),child:CircleAvatar(
+                          radius: 40,
+                          backgroundImage:
+                              AssetImage('assets/images/profile.png'),
+                        )),
                                    ),
                                    Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -200,7 +202,7 @@ Container button(BuildContext context, String text,){
             builder: (context) {
               return Container(
                 margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                height: 500,
+                height: 450,
                 color: Colors.white,
                 child: Center(
                   child: Column(
@@ -223,7 +225,13 @@ Container button(BuildContext context, String text,){
                       text1(context,Colors.red, 'Khó', (){}),
                     ],
                   ),
-                    button_orange(context, 'Bắt đầu', 50,(){}),
+                    button_orange(context, 'Bắt đầu', 50,(){
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => quiz(),
+                        ));
+                    }),
                     button_orange(context, 'Xếp hạng ',100, (){}),
                     ],
                   ),

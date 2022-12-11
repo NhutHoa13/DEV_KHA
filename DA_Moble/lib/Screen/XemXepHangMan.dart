@@ -7,7 +7,8 @@ import 'package:flutter_application_1/model/db_content.dart';
 import '../contraints/color.dart';
 
 class XemXhangMan extends StatefulWidget {
-  const XemXhangMan({super.key});
+   int score=0;
+   XemXhangMan({super.key, required this.score});
 
   @override
   State<XemXhangMan> createState() => _XemXhangManState();
@@ -107,7 +108,7 @@ class _XemXhangManState extends State<XemXhangMan> {
                       image: AssetImage('assets/images/trophy (4).png'),
                     ),
                     Text(
-                      '1000',
+                      "${widget.score}",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 12,

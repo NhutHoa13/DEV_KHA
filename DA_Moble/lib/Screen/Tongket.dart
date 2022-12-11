@@ -2,13 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Bando.dart';
 import 'package:flutter_application_1/Screen/Doikhangthang.dart';
 import 'package:flutter_application_1/Screen/XemXepHangMan.dart';
+import 'package:flutter_application_1/Screen/quiz.dart';
 import 'package:flutter_application_1/component/widget_item.dart';
 import 'package:flutter_application_1/model/db_content.dart';
 
 class TongketScreen extends StatefulWidget {
-  const TongketScreen({super.key});
+   int score =0;
+   TongketScreen({super.key, required this.score});
 
   @override
   State<TongketScreen> createState() => _TongketScreenState();
@@ -65,7 +68,7 @@ mainAxisAlignment: MainAxisAlignment.center,
                                  borderRadius:BorderRadius.circular(5)
                            
                                ),
-                               child: Text('100',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 26),),
+                               child: Text( "${widget.score}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 26),),
                              ),
                     ),
                     Padding(
@@ -85,7 +88,7 @@ mainAxisAlignment: MainAxisAlignment.center,
                                     Radius.circular(10.0)), // Set rounded corner radius
                                // Make rounded corner of border
                               ),
-                              child: Text("Scores",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),),
+                              child: Text('Score',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),),
                             ),
                       ),
                     )
@@ -97,7 +100,7 @@ mainAxisAlignment: MainAxisAlignment.center,
          padding: const EdgeInsets.all(8.0),
          child:  InkWell(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => XemXhangMan()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => XemXhangMan(score: widget.score)));
           },
           child: Container(
             margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -118,7 +121,14 @@ mainAxisAlignment: MainAxisAlignment.center,
        ),
                      
                       InkWell(
-          onTap: () {},
+          onTap: () {
+           // Navigator.popUntil(context, (route) => route.isCurrent);
+            Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => quiz(),
+                  ));
+          },
           child: Container(
             margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
             width: r-mlr,

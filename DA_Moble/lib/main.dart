@@ -27,6 +27,7 @@ import 'package:flutter_application_1/Screen/XemXepHangMan.dart';
 import 'package:flutter_application_1/Screen/Xemlichsudau.dart';
 import 'package:flutter_application_1/Screen/Xemxephang.dart';
 import 'package:flutter_application_1/Screen/aaa.dart';
+import 'package:flutter_application_1/Screen/quiz.dart';
 import 'package:flutter_application_1/Screen/xemhoso.dart';
 import 'package:flutter_application_1/model/db_content.dart';
 import 'package:flutter_application_1/model/db_lichsudau.dart';
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:TrangchuSrceen()
+      home:quiz()
     );
   }
 }

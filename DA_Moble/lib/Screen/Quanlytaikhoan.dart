@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/Screen/Dangnhap.dart';
+import 'package:flutter_application_1/Screen/Doikhangthang.dart';
 import 'package:flutter_application_1/Screen/Trangchu.dart';
 import 'package:flutter_application_1/Screen/screen.dart';
 
@@ -13,7 +14,7 @@ class QuanlitaikhoanScreen extends StatefulWidget {
 }
 
 class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
-  var orange = Color.fromARGB(255, 255, 172, 47);
+  
   bool isChecked = false;
   var style = Container(
     decoration: BoxDecoration(

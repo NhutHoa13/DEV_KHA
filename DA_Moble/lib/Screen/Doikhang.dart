@@ -30,56 +30,90 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
       resizeToAvoidBottomInset: false,
       body: Container(
         margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
-        padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+      //  padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
          decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                "assets/images/backgroup1.png",
+                "assets/images/backgroup7.png",
               ),
               fit: BoxFit.fill,
             ),
           ),
         child: Column(
           children: [
-            Center(
-                child: Text(
-              'Đối kháng',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black.withOpacity(0.6),
-                  fontSize: 16),
-            )),
-            Row(
-              children: [
-               CircleAvatar(
-                        radius: 43,
+           
+           Container(
+              margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      width: MediaQuery.of(context).size.width,
+                      height:80,
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 255, 241, 198),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                          child: Row(
+                            mainAxisAlignment:  MainAxisAlignment.spaceBetween,
+                            children: [
+                               Row(
+                                 children: [
+                                
+                                      CircleAvatar(
+                        radius: 45,
                           backgroundColor: Colors.white,
-                        child: CircleAvatar(
+                        child:    Padding(
+                                     padding: const EdgeInsets.fromLTRB(0, 2, 0, 2),child:CircleAvatar(
                           radius: 40,
                           backgroundImage:
                               AssetImage('assets/images/profile.png'),
                         )),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                   
-                    children: [Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                      child: Text('Nhựt Hòa',style: style1,),
-                    ), Text('Level: 10',style: style1,)],
-                  ),
-                )
-              ],
-            ),
+                                   ),
+                                   Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                    
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                            child: Text('Level: 1',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),
+                                          ),
+                                      
+                                      Text('Rank: Dong',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),)
+                                    ],
+                                   ),
+                                 ],
+                               ),
+                               Row(
+                                children: [
+                                    Image(
+                                      height: 30,
+                                      width: 30,
+                                      image: AssetImage('assets/images/diamond.png')),
+                                      SizedBox(width: 10,),
+                                    Text('35',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 16),)
+                                ],
+                               )
+                            ],
+                          ),
+                        ),
+                    ),
+                     Center(
+                child: Text(
+              'Đối kháng',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontSize: 28),
+            )),
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
               child: Image(
                   height: 150,
                   width: 150,
                   image: AssetImage('assets/images/swords.png')),
             ),
+            
             Container(
               padding: EdgeInsets.fromLTRB(10, 50, 10, 10),
               child: Row(

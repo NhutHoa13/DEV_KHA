@@ -52,7 +52,7 @@ class _XemlichdauScreenState extends State<XemlichdauScreen> with SingleTickerPr
               fit: BoxFit.fill,
             ),
           ),
-       child: SingleChildScrollView(
+     
         child: Container(
               height: MediaQuery.of(context).size.height,
           child: Column(
@@ -148,7 +148,7 @@ class _XemlichdauScreenState extends State<XemlichdauScreen> with SingleTickerPr
     
             ],
           ),
-        ),
+        
         
        ),
       ) ,

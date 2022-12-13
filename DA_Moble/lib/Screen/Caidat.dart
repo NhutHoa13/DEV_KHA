@@ -38,8 +38,9 @@ class _CaidatScreenState extends State<CaidatScreen> {
                 children: [
                    InkWell(
                                 onTap: () {
-                                  Navigator.of(context).popUntil((route) => route.isFirst);
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlihosoScreen()));
+                                 Navigator.pop(context);
+                                  //Navigator.push(context, MaterialPageRoute(builder: (context) => const QuanlihosoScreen()));
+                                  
                                 },
                                 child: Icon(
                                   Icons.arrow_back,

@@ -12,8 +12,23 @@ class DangkyScreen extends StatefulWidget {
 }
 
 class _DangkyScreenState extends State<DangkyScreen> {
+  void hiden() {
+    setState(() {
+      ishiden = !ishiden;
+    });
+    if (ishiden) {
+      setState(() {
+        iconshow = Icon(Icons.visibility_off);
+      });
+    } else {
+      iconshow = Icon(Icons.visibility);
+    }
+  }
+
   var orange = Color.fromARGB(255, 255, 172, 47);
 
+  bool ishiden = true;
+  Icon iconshow = Icon(Icons.visibility_off);
   @override
   Widget build(BuildContext context) {
     var mlr = 20.0;
@@ -21,9 +36,17 @@ class _DangkyScreenState extends State<DangkyScreen> {
     var l = MediaQuery.of(context).size.width - mlr;
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        body: SingleChildScrollView(
+        body: SafeArea(
           child: Container(
-            margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
+            decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                "assets/images/backgroup2.png",
+              ),
+              fit: BoxFit.fill,
+            ),
+          ),
+          
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -35,12 +58,13 @@ class _DangkyScreenState extends State<DangkyScreen> {
                           Container(
                             child: InkWell(
                               onTap: () {
+                                Navigator.pop(context);
                                 // Navigator.of(context).popUntil((route) => route.isFirst);
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            TrangchuSrceen()));
+                                // Navigator.push(
+                                //     context,
+                                //     MaterialPageRoute(
+                                //         builder: (context) =>
+                                //             TrangchuSrceen()));
                                 // Navigator.pop(context);
                               },
                               child: Icon(
@@ -61,7 +85,7 @@ class _DangkyScreenState extends State<DangkyScreen> {
                         ],
                       ),
                       Image(
-                        image: AssetImage('assets/images/language.png'),
+                        image: AssetImage('assets/images/logoapp1.png'),
                         width: r / 3,
                       ),
                       Text(
@@ -115,14 +139,20 @@ class _DangkyScreenState extends State<DangkyScreen> {
                           style: TextStyle(
                               fontSize: 18,
                               color: Color.fromARGB(255, 0, 0, 0)),
-                          obscureText: true,
+                          obscureText: ishiden,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: orange)),
                             border: OutlineInputBorder(),
                             labelText: "Nhập mật khẩu",
                             prefixIcon: (Icon(Icons.lock_outline)),
-                            suffixIcon: Icon(Icons.remove_red_eye),
+                            suffixIcon: GestureDetector(
+                              onTap: () {
+                               hiden();
+                              },
+                              child: iconshow,
+                            ),
+
                             labelStyle: TextStyle(
                                 color: Color.fromARGB(255, 58, 58, 58),
                                 fontSize: 15),
@@ -138,7 +168,7 @@ class _DangkyScreenState extends State<DangkyScreen> {
                           style: TextStyle(
                               fontSize: 18,
                               color: Color.fromARGB(255, 0, 0, 0)),
-                          obscureText: true,
+                          obscureText: ishiden,
                           decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
@@ -147,7 +177,12 @@ class _DangkyScreenState extends State<DangkyScreen> {
                               border: OutlineInputBorder(),
                               labelText: "Xác nhận lại mật khẩu",
                               prefixIcon: Icon(Icons.lock_person_outlined),
-                              suffixIcon: Icon(Icons.remove_red_eye),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  hiden();
+                                },
+                                child: iconshow,
+                              ),
                               labelStyle: TextStyle(
                                   color: Color.fromARGB(255, 58, 58, 58),
                                   fontSize: 15)),
@@ -169,8 +204,8 @@ class _DangkyScreenState extends State<DangkyScreen> {
                                     borderRadius:
                                         BorderRadius.circular(15.0)))),
                         onPressed: () {
-                          Navigator.of(context)
-                              .popUntil((route) => route.isFirst);
+                          // Navigator.of(context)
+                          //     .popUntil((route) => route.isFirst);
                           Navigator.push(
                               context,
                               MaterialPageRoute(

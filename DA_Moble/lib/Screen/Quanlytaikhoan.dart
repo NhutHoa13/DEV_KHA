@@ -38,13 +38,19 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
     var l = MediaQuery.of(context).size.width - mlr;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      // appBar: AppBar(
-      //   title: Text('Quản lí tài khoản'),
-      // ),
-      body: Container(
-        margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
-        child: SingleChildScrollView(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
+          child: Container(
+            decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                "assets/images/backgroup2.png",
+              ),
+              fit: BoxFit.fill,
+            ),
+          ),
+     
+        
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
             Column(
               children: [
@@ -55,12 +61,7 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
                       margin: EdgeInsets.fromLTRB(0, 0, r / 2 / 2, 0),
                       child: InkWell(
                         onTap: () {
-                          // Navigator.of(context).popUntil((route) => route.isFirst);
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => TrangchuSrceen()));
-                          // Navigator.pop(context);
+                          Navigator.pop(context);
                         },
                         child: Icon(
                           Icons.arrow_back,
@@ -79,7 +80,7 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
                   ],
                 ),
                 Image(
-                  image: AssetImage('assets/images/language.png'),
+                  image: AssetImage('assets/images/logoapp1.png'),
                   width: r / 3,
                 ),
                 Text(
@@ -104,10 +105,13 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
                       side: BorderSide(color: orange),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: ((context) => screen_home())));
+                     //  Navigator.push(
+               // context,
+              //  MaterialPageRoute(
+                 // builder: (context) =>
+                     // ContactDetail(contact: lsContacts[index]),
+               // ),
+             // );
                     },
                     child: Container(
                       margin: EdgeInsets.fromLTRB(0, 10, 10, 10),
@@ -188,7 +192,7 @@ class _QuanlitaikhoanScreenState extends State<QuanlitaikhoanScreen> {
             )
           ]),
         ),
-      ),
-    );
+    
+    ));
   }
 }

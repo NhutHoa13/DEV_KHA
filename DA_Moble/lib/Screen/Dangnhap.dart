@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter_application_1/Screen/Dangky.dart';
 import 'package:flutter_application_1/Screen/Quanlytaikhoan.dart';
 import 'package:flutter_application_1/Screen/Quenmatkhau.dart';
+import 'package:flutter_application_1/Screen/Trangchu.dart';
 import 'package:flutter_application_1/Screen/screen.dart';
 
 class DangnhapScreen extends StatefulWidget {
@@ -13,6 +14,19 @@ class DangnhapScreen extends StatefulWidget {
 }
 
 class _DangnhapScreenState extends State<DangnhapScreen> {
+  bool ishiden = true;
+  Icon iconshow = Icon(Icons.visibility_off);
+  void hiden(){
+    setState(() {
+      if(ishiden=!ishiden){
+        setState(() {
+          iconshow = Icon(Icons.visibility_off);
+        });
+      }else{
+        iconshow = Icon(Icons.visibility);
+      }
+    });
+  }
   var orange = Color.fromARGB(255, 255, 172, 47);
   bool isChecked = false;
   var style = Container(
@@ -33,10 +47,17 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
     var r = MediaQuery.of(context).size.width - mlr;
     var l = MediaQuery.of(context).size.width - mlr;
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: Container(
-        margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
-        child: SingleChildScrollView(
+        resizeToAvoidBottomInset: false,
+        body: SafeArea(
+          child: Container(
+            decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                "assets/images/backgroup2.png",
+              ),
+              fit: BoxFit.fill,
+            ),
+          ),
           child: Column(
               //mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
@@ -48,13 +69,14 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                       children: [
                         InkWell(
                           onTap: () {
-                            Navigator.of(context)
-                                .popUntil((route) => route.isFirst);
+                            Navigator.pop(context);
+                            // Navigator.of(context)
+                            //     .popUntil((route) => route.isFirst);
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        const QuanlitaikhoanScreen()));
+                                        const TrangchuSrceen()));
                           },
                           child: Icon(
                             Icons.arrow_back,
@@ -73,7 +95,7 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                       ],
                     ),
                     Image(
-                      image: AssetImage('assets/images/language.png'),
+                      image: AssetImage('assets/images/logoapp1.png'),
                       width: r / 3,
                     ),
                     // Text(
@@ -132,14 +154,19 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                             style: TextStyle(
                                 fontSize: 18,
                                 color: Color.fromARGB(255, 0, 0, 0)),
-                            obscureText: true,
+                            obscureText: ishiden,
                             decoration: InputDecoration(
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: orange)),
                               border: OutlineInputBorder(),
                               hintText: "Nhập mật khẩu",
                               prefixIcon: (Icon(Icons.lock_outline)),
-                              suffixIcon: Icon(Icons.remove_red_eye),
+                              suffixIcon: GestureDetector(
+                                onTap: () {
+                                  hiden();
+                                },
+                                child: iconshow,
+                              ),
                               hintStyle: TextStyle(
                                   color: Color.fromARGB(255, 58, 58, 58),
                                   fontSize: 15),
@@ -210,12 +237,12 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                                       borderRadius:
                                           BorderRadius.circular(15.0)))),
                           onPressed: () {
-                            Navigator.of(context)
+                           Navigator.of(context)
                                 .popUntil((route) => route.isFirst);
-                            Navigator.push(
+                           Navigator.push(
                                 context,
-                                MaterialPageRoute(
-                                    builder: (context) => const screen_home()));
+                               MaterialPageRoute(
+                                   builder: (context) =>  HomeScreen ()));
                           },
                           // child: const Padding(
                           //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),

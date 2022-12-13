@@ -61,7 +61,7 @@ class _QuanlihosoScreenState extends State<QuanlihosoScreen>  {
                           InkWell(
                                 onTap: () {
                                  
-                                  Navigator.popUntil(context, (route) => route.isFirst);
+                                 // Navigator.popUntil(context, (route) => route.isFirst);
                                   Navigator.push(context, MaterialPageRoute(builder: (context) => ChinhsuahosoScreen()));
                                   
                                 },
@@ -79,7 +79,7 @@ class _QuanlihosoScreenState extends State<QuanlihosoScreen>  {
                            ),
                             
                             IconButton(onPressed: () {
-                              Navigator.popUntil(context, (route) => route.isFirst);
+                             //Navigator.popUntil(context, (route) => route.isFirst);
                                   Navigator.push(context, MaterialPageRoute(builder: (context) => CaidatScreen()));
                             }, icon: Icon(Icons.settings,size: 30,)),
                             
@@ -156,10 +156,11 @@ class _QuanlihosoScreenState extends State<QuanlihosoScreen>  {
                             
                           ContainersText1(content: '100%')
                         ],),
-                      )
+                      ),
                       
                 ],
               ),
+             
               ]
             ),
           ),
@@ -200,6 +201,41 @@ class ContainersText1 extends StatelessWidget {
             // decoration: TextDecoration.underline
             ),
       ),
+    );
+  }
+}
+class imgAvatar extends StatelessWidget {
+  const imgAvatar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          height: 100,
+          width: 100,
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+          CircleAvatar(
+            backgroundImage: AssetImage('assets/images/profile.png'),
+          ),
+          Positioned(
+            bottom: -5,
+            right: -5,
+            child: SizedBox(
+              height: 46,
+             width: 46, 
+            child: IconButton(
+              icon: Image(image: AssetImage('assets/images/camera (1).png')),
+              iconSize: 50,
+              onPressed: () {},
+            )
+          ))
+            ],
+          ),
+        )
+      ],
     );
   }
 }

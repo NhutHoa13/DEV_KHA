@@ -5,20 +5,31 @@ import 'package:flutter_application_1/Screen/Doikhang.dart';
 import 'package:flutter_application_1/component/widget_item.dart';
 import 'package:flutter_application_1/model/db_content.dart';
 
-class phanhang extends StatefulWidget {
-  const phanhang({super.key});
+class Xephangdoikhang extends StatefulWidget {
+  const Xephangdoikhang({super.key});
 
   @override
-  State<phanhang> createState() => _phanhangState();
+  State<Xephangdoikhang> createState() => _XephangdoikhangState();
 }
 
-class _phanhangState extends State<phanhang> {
+class _XephangdoikhangState extends State<Xephangdoikhang> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
-      padding: EdgeInsets.all(5),
+     // margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+      padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+       height: MediaQuery.of(context).size.height,
+       width: MediaQuery.of(context).size.width,
+      
+        // decoration: BoxDecoration(
+        //     image: DecorationImage(
+        //       image: AssetImage(
+        //         "assets/images/backgroup2.png",
+        //       ),
+        //       fit: BoxFit.cover,
+        //     ),
+        //   ),
       child: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,7 +46,7 @@ class _phanhangState extends State<phanhang> {
                   )),
             ),
             Text(
-              'Giải đấu xếp hạng',
+              'Xếp hạng đối kháng',
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -193,7 +204,7 @@ class _phanhangState extends State<phanhang> {
                   child: ListView.builder(
                     itemCount: db_context.items.length,
                     itemBuilder: (context, index) {
-                      return CanhanFrame(
+                      return DoikhangFrame(
                         info: db_context.items[index],
                       );
                     },
@@ -248,8 +259,13 @@ class _phanhangState extends State<phanhang> {
                 ),
                 Row(
                   children: [
+                    Image(
+                      height: 30,
+                      width: 30,
+                      image: AssetImage('assets/images/trophy (4).png'),
+                    ),
                     Text(
-                      '1000 KN',
+                      'Score',
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 12,

@@ -1,7 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/Dapan.dart';
 import 'package:flutter_application_1/Screen/Doikhang.dart';
+import 'package:flutter_application_1/Screen/screen.dart';
 
 class TimtranScreen extends StatefulWidget {
   const TimtranScreen({super.key});
@@ -11,13 +15,28 @@ class TimtranScreen extends StatefulWidget {
 }
 
 class _TimtranScreenState extends State<TimtranScreen> {
+  
+
   var orange = Color.fromARGB(255, 255, 172, 47);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
-        padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+        // margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
+        // padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+         decoration:BoxDecoration(
+          gradient:LinearGradient(
+            colors:[
+              Colors.orange,
+              Colors.yellow,
+             // Colors.green
+            ],
+            begin:Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          )
+        ),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Center(
               child: Text(
@@ -42,8 +61,8 @@ class _TimtranScreenState extends State<TimtranScreen> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                       child: CircleAvatar(
-                          radius: 42,
-                          backgroundColor: Color(0xffFDCF09),
+                          radius: 43,
+                          backgroundColor: Colors.white,
                           child: CircleAvatar(
                             radius: 40,
                             backgroundImage:
@@ -83,22 +102,41 @@ class _TimtranScreenState extends State<TimtranScreen> {
                 Column(
                   children: [
                     CircleAvatar(
-                        radius: 42,
-                        backgroundColor: Color(0xffFDCF09),
+                        radius: 43,
+                          backgroundColor: Colors.white,
                         child: CircleAvatar(
                           radius: 40,
                           backgroundImage:
                               AssetImage('assets/images/profile.png'),
                         )),
+                         Text(
+                      'User name',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Row(                 
+                      children: [
+                      Image(
+                        height: 20,
+                        image: AssetImage('assets/images/trophy (5).png')),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(5, 10, 0, 10),
+                          child: Text('1000',style: TextStyle(
+                color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold),),
+                        )
+                    ],)
                   ],
-                )
+                ),
+                
               ],
             ),
           ),
           Center(
             child: TextButton(onPressed: (){
-               Navigator.of(context).popUntil((route) => route.isFirst);
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => DoikhangScreen()));
+            
+             Navigator.pop(context);
             }, 
                       child: Text('Hủy',
                     style: TextStyle(
@@ -112,3 +150,4 @@ class _TimtranScreenState extends State<TimtranScreen> {
     );
   }
 }
+

@@ -1,3 +1,6 @@
+            
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screen/Tongket.dart';
@@ -6,26 +9,56 @@ import '../contraints/color.dart';
 import '../model/cauhoi.dart';
 
 class quiz extends StatefulWidget {
-  const quiz({super.key});
+  const quiz({super.key,required this.totalTime});
+  final int totalTime;
 
   @override
   State<quiz> createState() => _quizState();
 }
 
-class _quizState extends State<quiz> {
+class _quizState extends State<quiz> with SingleTickerProviderStateMixin{
    int question_pos = 0;
   int score = 0;
   bool btnPressed = false;
   PageController? _controller;
   String btnText = "Next Question";
   bool answered = false;
+    late int _currentTime;
+  late Timer _timer;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _controller = PageController(initialPage: 0);
+
+    _currentTime = widget.totalTime;
+  _timer=Timer.periodic(Duration(seconds: 1), (timer) {
+    setState(() {
+      _currentTime-=1;
+    });
+    if(_currentTime==0){
+      _timer.cancel();
+    }
+   });
   }
+
+  // void initStatea()async{
+  // super.initState();
+  // _currentTime = 10;
+  // _timer=Timer.periodic(Duration(seconds: 1), (timer) {
+  //   setState(() {
+  //     _currentTime-=1;
+  //   });
+  //   if(_currentTime==0){
+  //     _timer.cancel();
+  //   }
+  //  });
+  // }
   @override
+  void dispose(){
+    _timer.cancel();
+    super.dispose();
+  }
   Widget build(BuildContext context) {
     return Scaffold(
     
@@ -107,7 +140,7 @@ class _quizState extends State<quiz> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '15',
+                          _currentTime.toString()                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ,
                           style: TextStyle(
                               fontSize: 30, fontWeight: FontWeight.bold),
                         )
@@ -197,6 +230,23 @@ class _quizState extends State<quiz> {
                                           print("no");
                                         }
                                         setState(() {
+                                          Future.delayed(Duration(seconds: 3),(){
+                                  if (_controller!.page?.toInt() == questions.length - 1) {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => TongketScreen(score: score)));
+                              } else {
+                                _controller!.nextPage(
+                                    duration: Duration(milliseconds: 200),
+                                    curve: Curves.easeInExpo);
+                  
+                                setState(() {
+                                  
+                                  btnPressed = false;
+                                });
+                              }
+                              });
                                           btnPressed = true;
                                           answered = true;
                                         });
@@ -212,32 +262,7 @@ class _quizState extends State<quiz> {
                           SizedBox(
                             height: 40.0,
                           ),
-                          RawMaterialButton(
-                            onPressed: () {
-                              if (_controller!.page?.toInt() == questions.length - 1) {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => TongketScreen(score: score)));
-                              } else {
-                                _controller!.nextPage(
-                                    duration: Duration(milliseconds: 250),
-                                    curve: Curves.easeInExpo);
-                  
-                                setState(() {
-                                  btnPressed = false;
-                                });
-                              }
-                            },
-                            shape: StadiumBorder(),
-                            fillColor: Colors.orange,
-                            padding: EdgeInsets.all(18.0),
-                            elevation: 0.0,
-                            child: Text(
-                              btnText,
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          )
+                         
                         ],
                       );
                     },

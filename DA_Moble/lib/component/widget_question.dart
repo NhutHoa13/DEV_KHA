@@ -27,7 +27,7 @@ Widget questionWidget(
           margin: EdgeInsets.only(bottom: 10.0, left: 12.0, right: 12.0),
           child: RawMaterialButton(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(0.0),
             ),
             fillColor: AppColor.secondaryColor,
             onPressed: function,

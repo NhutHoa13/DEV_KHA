@@ -229,7 +229,7 @@ Container button(BuildContext context, String text,){
                         Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => quiz(),
+                          builder: (context) => quiz(totalTime: 15),
                         ));
                     }),
                     button_orange(context, 'Xếp hạng ',100, (){}),

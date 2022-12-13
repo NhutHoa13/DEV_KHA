@@ -126,7 +126,7 @@ mainAxisAlignment: MainAxisAlignment.center,
             Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => quiz(),
+                    builder: (context) => quiz(totalTime:0),
                   ));
           },
           child: Container(

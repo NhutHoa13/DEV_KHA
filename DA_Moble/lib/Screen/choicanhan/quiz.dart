@@ -118,22 +118,22 @@ class _quizState extends State<quiz> with SingleTickerProviderStateMixin{
                             ],
                           ),
                         ),
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.favorite,
-                              color: Colors.red,
-                            ),
-                            Icon(
-                              Icons.favorite,
-                              color: Colors.red,
-                            ),
-                            Icon(
-                              Icons.favorite,
-                              color: Colors.red,
-                            ),
-                          ],
-                        )
+                        // Row(
+                        //   children: [
+                        //     Icon(
+                        //       Icons.favorite,
+                        //       color: Colors.red,
+                        //     ),
+                        //     Icon(
+                        //       Icons.favorite,
+                        //       color: Colors.red,
+                        //     ),
+                        //     Icon(
+                        //       Icons.favorite,
+                        //       color: Colors.red,
+                        //     ),
+                        //   ],
+                        // )
                       ],
                     ),
                     Row(
@@ -242,13 +242,14 @@ class _quizState extends State<quiz> with SingleTickerProviderStateMixin{
                                     curve: Curves.easeInExpo);
                   
                                 setState(() {
-                                  
+                                    
                                   btnPressed = false;
                                 });
                               }
                               });
                                           btnPressed = true;
-                                          answered = true;
+                                          answered = false ;
+                                        
                                         });
                                       }
                                     : null,

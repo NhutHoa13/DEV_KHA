@@ -39,6 +39,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   websafe_svg: ^2.1.2+7
   get: ^4.6.5
+  cached_network_image: ^3.2.2
+  http: ^0.13.5
+  firebase_auth: ^4.1.2
+  cloud_firestore: ^4.0.5
+  firebase_core: ^2.2.0
 
   # state management, intelligent dependency injection, and route management
 

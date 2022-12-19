@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter_application_1/Screen/Dangky.dart';
@@ -14,8 +15,29 @@ class DangnhapScreen extends StatefulWidget {
 }
 
 class _DangnhapScreenState extends State<DangnhapScreen> {
-  bool ishiden = true;
+  
+  TextEditingController txtemail = TextEditingController();
+  TextEditingController txtpassword = TextEditingController();
+   final _auth = FirebaseAuth.instance;
+    bool validate = false;
+      bool ishiden = true;
   Icon iconshow = Icon(Icons.visibility_off);
+   dynamic validateTenDangNhap(String value) {
+    if (validate == false) {
+      return null;
+    } else if (value.isEmpty) {
+      return "Tài Khoản không bỏ trống";
+    }
+  }
+
+  dynamic validatematKhau(String value) {
+    if (value == false) {
+      return null;
+    } else if (value.isEmpty) {
+      return "Mật Khẩu không thể bỏ trống";
+    }
+  }
+
   void hiden(){
     setState(() {
       if(ishiden=!ishiden){
@@ -122,6 +144,7 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                                 color: Colors.black.withOpacity(0.6)),
                           ),
                           TextField(
+                            controller: txtemail,
                             style: TextStyle(
                                 fontSize: 18,
                                 color: Color.fromARGB(255, 0, 0, 0)),
@@ -151,6 +174,7 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                                 color: Colors.black.withOpacity(0.6)),
                           ),
                           TextField(
+                            controller: txtpassword ,
                             style: TextStyle(
                                 fontSize: 18,
                                 color: Color.fromARGB(255, 0, 0, 0)),
@@ -236,16 +260,37 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                                   RoundedRectangleBorder(
                                       borderRadius:
                                           BorderRadius.circular(15.0)))),
-                          onPressed: () {
-                           Navigator.of(context)
-                                .popUntil((route) => route.isFirst);
-                           Navigator.push(
-                                context,
-                               MaterialPageRoute(
-                                   builder: (context) =>  HomeScreen ()));
-                          },
-                          // child: const Padding(
-                          //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                         
+                         onPressed: () async {
+                    setState(() {
+                      validate = true;
+                    });
+                    // Kiem tra mat khau co tu 6 ky tu tro len
+                    try {
+                      final _user = await _auth.signInWithEmailAndPassword(
+                          email: txtemail.text,
+                          password: txtpassword.text);
+                      _auth.authStateChanges().listen((event) {
+                        if (event != null) {
+                          txtemail.clear();
+                          txtpassword.clear();
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            'home',
+                            (route) => false,
+                          );
+                        }
+                      });
+                    } on FirebaseAuthException catch (e) {
+                      final snackBar = SnackBar(
+                          content: Text('Email Hoặc Mật Khẩu Không Đúng'));
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    } catch (e) {
+                      final snackBar =
+                          SnackBar(content: Text('Lỗi Kết Nối Đến Server!'));
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    }
+                  },
                           child: Text(
                             "Đăng nhập",
                             style: TextStyle(
@@ -258,6 +303,25 @@ class _DangnhapScreenState extends State<DangnhapScreen> {
                     ],
                   ),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Bạn chưa có tài khoản?',style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),),
+                    InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => DangkyScreen(),));
+                      },
+                      child: Text('Đăng kí',style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold
+                      ),),
+                    )
+                  ],
+                )
               ]),
         ),
       ),

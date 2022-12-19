@@ -1,3 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -12,6 +15,13 @@ class DangkyScreen extends StatefulWidget {
 }
 
 class _DangkyScreenState extends State<DangkyScreen> {
+  bool validate = false;
+ TextEditingController txtuser = TextEditingController();
+ TextEditingController txtemail= TextEditingController();
+ TextEditingController txtpassword = TextEditingController();
+ TextEditingController txtpassword1 = TextEditingController();
+    final _auth = FirebaseAuth.instance;
+
   void hiden() {
     setState(() {
       ishiden = !ishiden;
@@ -102,6 +112,7 @@ class _DangkyScreenState extends State<DangkyScreen> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
+                          controller: txtuser,
                           style: TextStyle(
                               fontSize: 18,
                               color: Color.fromARGB(255, 0, 0, 0)),
@@ -119,6 +130,8 @@ class _DangkyScreenState extends State<DangkyScreen> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
+                           controller: txtemail,
+                           keyboardType: TextInputType.emailAddress,
                           style: TextStyle(
                               fontSize: 18,
                               color: Color.fromARGB(255, 0, 0, 0)),
@@ -136,6 +149,7 @@ class _DangkyScreenState extends State<DangkyScreen> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
+                           controller: txtpassword,
                           style: TextStyle(
                               fontSize: 18,
                               color: Color.fromARGB(255, 0, 0, 0)),
@@ -165,6 +179,7 @@ class _DangkyScreenState extends State<DangkyScreen> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
+                          controller: txtpassword1,
                           style: TextStyle(
                               fontSize: 18,
                               color: Color.fromARGB(255, 0, 0, 0)),
@@ -203,13 +218,59 @@ class _DangkyScreenState extends State<DangkyScreen> {
                                 RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.circular(15.0)))),
-                        onPressed: () {
-                          // Navigator.of(context)
-                          //     .popUntil((route) => route.isFirst);
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DangnhapScreen()));
+                        onPressed: () async{
+                          setState(()  {
+                      //validate = true;
+                      // Kiem tra mat khau co tu 6 ky tu tro len
+                      if (txtpassword.text.length <= 6) {}
+
+                      if (txtpassword1.text.length <= 6) {}
+                      // Kiem tra password co trung nhau khong
+                      if (txtpassword.text != txtpassword1.text) {
+                        const snackBar = SnackBar(
+                            content: Text('Password Không Trùng Khớp'));
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      } else {
+                        try {
+                          final newUser =
+                               _auth.createUserWithEmailAndPassword(
+                                  email: txtemail.text,
+                                  password: txtpassword.text);
+                          if (newUser != null) {
+                            const snackBar =
+                                SnackBar(content: Text('Đăng Ký Thành Công!'));
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DangnhapScreen(),
+                                ));
+                          } else {
+                            const snackBar = SnackBar(
+                                content: Text('Tài khoản không hợp lệ'));
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          }
+                        } catch (e) {
+                          if (txtemail.text.isEmpty == true &&
+                              txtpassword.text.isEmpty == true) {
+                            const snackBar = SnackBar(
+                                content: Text(
+                                    'Bạn Không Nhập Tài Khoản và Mật Khẩu'));
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          } else {
+                            const snackBar = SnackBar(
+                                content: Text('Tài khoản không hợp lệ'));
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          }
+                        }
+                      }
+                    });
+                
+            
                         },
                         // child: const Padding(
                         //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),

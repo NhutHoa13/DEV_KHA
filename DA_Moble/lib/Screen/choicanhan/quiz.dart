@@ -3,10 +3,10 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Screen/Tongket.dart';
+import 'package:flutter_application_1/Screen/choicanhan/Tongket.dart';
 
-import '../contraints/color.dart';
-import '../model/cauhoi.dart';
+import '../../contraints/color.dart';
+import '../../model/cauhoi.dart';
 
 class quiz extends StatefulWidget {
   const quiz({super.key,required this.totalTime});

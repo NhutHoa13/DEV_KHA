@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'dart:math' as math;
 
 import 'package:flutter_application_1/Screen/Doikhangthang.dart';
-import 'package:flutter_application_1/Screen/quiz.dart';
+import 'package:flutter_application_1/Screen/choicanhan/quiz.dart';
 import 'package:flutter_application_1/contraints/button.dart';
 
 class BandoScreen extends StatefulWidget {

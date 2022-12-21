@@ -44,6 +44,9 @@ dependencies:
   firebase_auth: ^4.1.2
   cloud_firestore: ^4.0.5
   firebase_core: ^2.2.0
+  http: ^0.13.0
+  image_picker: ^0.8.4+4
+  flutter_image_compress: ^0.7.0
 
   # state management, intelligent dependency injection, and route management
 

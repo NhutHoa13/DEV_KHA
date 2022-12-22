@@ -11,19 +11,18 @@ import 'package:flutter_application_1/Screen/screen.dart';
 import 'package:get/get.dart';
 //import 'package:giffy_dialog/giffy_dialog.dart';
 
-class getjason extends StatefulWidget {
+class man6 extends StatefulWidget {
   int socau;
-  getjason({super.key, required this.socau});
+  man6({super.key, required this.socau});
 
   @override
-  State<getjason> createState() => _getjasonState();
+  State<man6> createState() => _man6State();
 }
-
-class _getjasonState extends State<getjason> {
+class _man6State extends State<man6> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: DefaultAssetBundle.of(context).loadString("data/quiz.json"),
+        future: DefaultAssetBundle.of(context).loadString("data/man6.json"),
         builder: (context, snapshot) {
           var mydata = json.decode(snapshot.data.toString());
 
@@ -68,7 +67,7 @@ class quiz extends StatefulWidget {
 
 class _quizState extends State<quiz> {
   String message = "Score: " + "0";
-  String levels = "Level: " + "1 /10";
+  String levels = "Level: " + "1";
   String vies = "3";
 
   final String uid;
@@ -301,7 +300,7 @@ class _quizState extends State<quiz> {
                     children: [
                       Container(
                         margin: EdgeInsets.all(10),
-                        width: 130,
+                        width: 180,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           shape: BoxShape.rectangle,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_9/artchoice.dart';
+import 'package:flutter_application_1/Screen/choicanhan/Bando.dart';
+//import 'package:flutter_application_9/artchoice.dart';
 
 class result extends StatefulWidget {
   int marks;
@@ -14,6 +15,7 @@ class result extends StatefulWidget {
 class _resultState extends State<result> {
   int marks;
   _resultState(this.marks);
+
   // List<String> images =[
   //   "images/backgroup1.png",
   //   "images/backgroup2.png",
@@ -124,7 +126,7 @@ class _resultState extends State<result> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(onPressed: (){
-                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => artchoice(),));
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => BandoScreen(marks: widget.marks,),));
 
                 }, child: Text('Continue'))
               ],

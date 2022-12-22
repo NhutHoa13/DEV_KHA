@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/Screen/Dapan.dart';
 import 'package:flutter_application_1/Screen/Doikhang.dart';
+import 'package:flutter_application_1/Screen/daudoikhang.dart';
 import 'package:flutter_application_1/Screen/screen.dart';
 
 class TimtranScreen extends StatefulWidget {
@@ -16,7 +17,14 @@ class TimtranScreen extends StatefulWidget {
 
 class _TimtranScreenState extends State<TimtranScreen> {
   
-
+void initState(){
+      super.initState();
+      Timer(Duration(seconds: 5),(){
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) => DaudoikhangScreen(),
+         ));
+      });
+    }
   
   @override
   Widget build(BuildContext context) {
@@ -43,12 +51,7 @@ class _TimtranScreenState extends State<TimtranScreen> {
             style: TextStyle(
                 color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold),
           )),
-          Center(
-              child: Text(
-            '5',
-            style: TextStyle(
-                color: Colors.black, fontSize: 30, fontWeight: FontWeight.bold),
-          )),
+        
           Padding(
             padding: const EdgeInsets.all(40.0),
             child: Row(

@@ -20,29 +20,29 @@ class QuenmatkhauScreen extends StatefulWidget {
 }
 
 class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
-  final _emailcontroller = TextEditingController();
+  // final _emailcontroller = TextEditingController();
   @override
-  void dispose(){
-    _emailcontroller.dispose();
-    super.dispose();
-  }
-  Future forgot() async{
-    try{
-      await FirebaseAuth.instance.sendPasswordResetEmail(email: _emailcontroller.text.trim()).then((value) => Navigator.of(context).pop());
-        showDialog(context: context, builder: (context){
-          return AlertDialog(
-            content: Text('Password reset link sent')
-          );  
-        });
-          } on FirebaseAuthException catch(e){
-            print(e);
-            showDialog(context: context, builder: (context){
-              return AlertDialog(
-                content: Text(e.message.toString()),
-              );
-            });
-          }
-  }
+  // void dispose(){
+  //   _emailcontroller.dispose();
+  //   super.dispose();
+  // }
+  // Future forgot() async{
+  //   try{
+  //     await FirebaseAuth.instance.sendPasswordResetEmail(email: _emailcontroller.text.trim()).then((value) => Navigator.of(context).pop());
+  //       showDialog(context: context, builder: (context){
+  //         return AlertDialog(
+  //           content: Text('Password reset link sent')
+  //         );  
+  //       });
+  //         } on FirebaseAuthException catch(e){
+  //           print(e);
+  //           showDialog(context: context, builder: (context){
+  //             return AlertDialog(
+  //               content: Text(e.message.toString()),
+  //             );
+  //           });
+  //         }
+  // }
  
   var myLabelStyle = TextStyle(
     color: Colors.black.withOpacity(0.3),
@@ -115,7 +115,7 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
-                        controller: _emailcontroller,
+                       // controller: _emailcontroller,
                         style: myTextStyle,
                         decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
@@ -139,7 +139,7 @@ class _QuenmatkhauScreenState extends State<QuenmatkhauScreen> {
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20.0)))),
-                      onPressed: forgot,
+                      onPressed:(){} ,//forgot,
                       // child: const Padding(
                       //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: Text(

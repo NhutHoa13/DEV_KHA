@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/screen.dart';
+
+import '../contraints/button.dart';
 
  var orange = Color.fromARGB(255, 255, 172, 47);
 
 class DoikhangthangScreen extends StatefulWidget {
-  const DoikhangthangScreen({super.key});
+  int marks;
+  int level;
+   DoikhangthangScreen({super.key,required this.marks,required this.level});
 
   @override
   State<DoikhangthangScreen> createState() => _DoikhangthangScreenState();
@@ -64,7 +69,7 @@ class _DoikhangthangScreenState extends State<DoikhangthangScreen> {
                     children: [
                          Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10 , 10),
-                          child: Text('1000',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
+                          child: Text('${widget.marks}',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
                         ),
                         Text('Score',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
                          Padding(
@@ -78,12 +83,12 @@ class _DoikhangthangScreenState extends State<DoikhangthangScreen> {
                     children: [
                          Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10 , 10),
-                          child: Text('9/10',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
+                          child: Text('${widget.level}/15',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
                         ),
                         Text('Câu đúng',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
                          Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10 , 10),
-                          child: Text('6/10',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
+                          child: Text('6/15',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
                         ),
                     ],
                   ),
@@ -114,9 +119,12 @@ class _DoikhangthangScreenState extends State<DoikhangthangScreen> {
                     ],
                   ),
                   SizedBox(height: 20,),
-                  button(context, 'Chơi lại', (){}),
-                  button(context, 'Tìm đối thủ', (){}),
-                  button(context, 'Thoát', (){                
+                  button1(context, 'Chơi lại', (){}),
+                  button1(context, 'Tìm đối thủ', (){}),
+                  button1(context, 'Thoát', (){  
+                     Navigator.of(context).pushReplacement(MaterialPageRoute(
+      builder: (context) => HomeScreen(),
+    ))     ;         
                   }),
                 ],
               ),
@@ -126,38 +134,4 @@ class _DoikhangthangScreenState extends State<DoikhangthangScreen> {
     );
   }
 }
- Container button(BuildContext context,String text, Function onTap){
-      return  Container(
-              padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ConstrainedBox(
-                    constraints: BoxConstraints(minWidth: 300, minHeight: 50),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                          side: MaterialStateProperty.all(
-                              BorderSide(color: Colors.white)),
-                          backgroundColor:
-                              MaterialStatePropertyAll<Color>(orange),
-                          shape: MaterialStateProperty.all(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15.0)))),
-                      onPressed: () {
-                        onPressed: (){
-                          onTap();
-                        };
-                      },
-                    
-                      child: Text(
-                       text,
-                        style: TextStyle(
-                          fontSize: 26,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            );
-  }
+ 

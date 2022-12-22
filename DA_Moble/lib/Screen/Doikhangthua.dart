@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/Screen/screen.dart';
 
  var orange = Color.fromARGB(255, 255, 172, 47);
 
 class DoikhangthuaScreen extends StatefulWidget {
-  const DoikhangthuaScreen({super.key});
+   int marks;
+  int level;
+   DoikhangthuaScreen({super.key,required this.marks,required this.level});
 
   @override
   State<DoikhangthuaScreen> createState() => _DoikhangthuaScreenState();
@@ -65,7 +68,7 @@ class _DoikhangthuaScreenState extends State<DoikhangthuaScreen> {
                     children: [
                          Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10 , 10),
-                          child: Text('1000',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
+                          child: Text('${widget.marks}',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
                         ),
                         Text('Score',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
                          Padding(
@@ -79,12 +82,12 @@ class _DoikhangthuaScreenState extends State<DoikhangthuaScreen> {
                     children: [
                          Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10 , 10),
-                          child: Text('9/10',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
+                          child: Text('${widget.marks}',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
                         ),
                         Text('Câu đúng',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
                          Padding(
                           padding: const EdgeInsets.fromLTRB(10, 10, 10 , 10),
-                          child: Text('6/10',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
+                          child: Text('6/15',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 20)),
                         ),
                     ],
                   ),
@@ -117,7 +120,10 @@ class _DoikhangthuaScreenState extends State<DoikhangthuaScreen> {
                   SizedBox(height: 20,),
                   button(context, 'Chơi lại', (){}),
                   button(context, 'Tìm đối thủ', (){}),
-                  button(context, 'Thoát', (){                
+                  button(context, 'Thoát', (){   
+                     Navigator.of(context).pushReplacement(MaterialPageRoute(
+      builder: (context) => HomeScreen(),
+    ))  ;           
                   }),
                 ],
               ),

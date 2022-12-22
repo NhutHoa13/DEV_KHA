@@ -18,8 +18,8 @@ class DoikhangScreen extends StatefulWidget {
 }
 
 class _DoikhangScreenState extends State<DoikhangScreen> {
-  var style1 = TextStyle(
-      fontWeight: FontWeight.bold, color: Colors.black,fontSize: 18);
+  var style1 =
+      TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18);
   var orange = Color.fromARGB(255, 255, 172, 47);
   @override
   Widget build(BuildContext context) {
@@ -30,75 +30,92 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
       resizeToAvoidBottomInset: false,
       body: Container(
         margin: EdgeInsets.fromLTRB(0, mlr + 10, 0, 0),
-      //  padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+        //  padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-         decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                "assets/images/backgroup7.png",
-              ),
-              fit: BoxFit.fill,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/images/backgroup7.png",
             ),
+            fit: BoxFit.fill,
           ),
+        ),
         child: Column(
           children: [
-           
-           Container(
+            Container(
               margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                      width: MediaQuery.of(context).size.width,
-                      height:80,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 255, 241, 198),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
-                          child: Row(
-                            mainAxisAlignment:  MainAxisAlignment.spaceBetween,
-                            children: [
-                               Row(
-                                 children: [
-                                
-                                      CircleAvatar(
-                        radius: 45,
+              width: MediaQuery.of(context).size.width,
+              height: 80,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 255, 241, 198),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 45,
                           backgroundColor: Colors.white,
-                        child:    Padding(
-                                     padding: const EdgeInsets.fromLTRB(0, 2, 0, 2),child:CircleAvatar(
-                          radius: 40,
-                          backgroundImage:
-                              AssetImage('assets/images/profile.png'),
-                        )),
-                                   ),
-                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                    
-                                          Padding(
-                                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                            child: Text('Level: 1',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),),
-                                          ),
-                                      
-                                      Text('Rank: Dong',style: TextStyle(color: Colors.black,fontSize: 14,fontWeight: FontWeight.bold),)
-                                    ],
-                                   ),
-                                 ],
-                               ),
-                               Row(
-                                children: [
-                                    Image(
-                                      height: 30,
-                                      width: 30,
-                                      image: AssetImage('assets/images/diamond.png')),
-                                      SizedBox(width: 10,),
-                                    Text('35',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 16),)
-                                ],
-                               )
-                            ],
-                          ),
+                          child: Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 2, 0, 2),
+                              child: CircleAvatar(
+                                radius: 40,
+                                backgroundImage:
+                                    AssetImage('assets/images/profile.png'),
+                              )),
                         ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                              child: Text(
+                                'Level: 1',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Text(
+                              'Rank: Dong',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                      ],
                     ),
-                     Center(
+                    Row(
+                      children: [
+                        Image(
+                            height: 30,
+                            width: 30,
+                            image: AssetImage('assets/images/diamond.png')),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          '35',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Center(
                 child: Text(
               'Đối kháng',
               style: TextStyle(
@@ -113,7 +130,6 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
                   width: 150,
                   image: AssetImage('assets/images/swords.png')),
             ),
-            
             Container(
               padding: EdgeInsets.fromLTRB(10, 50, 10, 10),
               child: Row(
@@ -131,7 +147,6 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15.0)))),
                       onPressed: () {
-                       
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -209,7 +224,8 @@ class _DoikhangScreenState extends State<DoikhangScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const XemlichdauScreen()));
+                                builder: (context) =>
+                                    const XemlichdauScreen()));
                       },
                       // child: const Padding(
                       //     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),

@@ -2,23 +2,27 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/Screen/Bando.dart';
+import 'package:flutter_application_1/Screen/choicanhan/Bando.dart';
 import 'package:flutter_application_1/Screen/Doikhangthang.dart';
 import 'package:flutter_application_1/Screen/XemXepHangMan.dart';
+import 'package:flutter_application_1/Screen/choicanhan/Batdau.dart';
 import 'package:flutter_application_1/Screen/quiz.dart';
 import 'package:flutter_application_1/component/widget_item.dart';
 import 'package:flutter_application_1/model/db_content.dart';
 
 class TongketScreen extends StatefulWidget {
-   int score =0;
-   TongketScreen({super.key, required this.score});
+   int marks;
+   TongketScreen({super.key, required this.marks});
 
   @override
-  State<TongketScreen> createState() => _TongketScreenState();
+  State<TongketScreen> createState() => _TongketScreenState(marks);
 }
 
 class _TongketScreenState extends State<TongketScreen> {
-   
+
+   int marks;
+ _TongketScreenState(this.marks);
+
   @override
   Widget build(BuildContext context) {
      var mlr = 20.0;
@@ -68,7 +72,7 @@ mainAxisAlignment: MainAxisAlignment.center,
                                  borderRadius:BorderRadius.circular(5)
                            
                                ),
-                               child: Text( "${widget.score}",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 26),),
+                               child: Text(marks.toString(),style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 26),),
                              ),
                     ),
                     Padding(
@@ -100,7 +104,7 @@ mainAxisAlignment: MainAxisAlignment.center,
          padding: const EdgeInsets.all(8.0),
          child:  InkWell(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => XemXhangMan(score: widget.score)));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => XemXhangMan(marks: widget.marks)));
           },
           child: Container(
             margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -126,7 +130,8 @@ mainAxisAlignment: MainAxisAlignment.center,
             Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => quiz(totalTime:0),
+                    builder: (context) => BatdauScreen( text: "",
+                                    title: "",marks: marks,widget: widget,)
                   ));
           },
           child: Container(
